@@ -6,8 +6,6 @@
 
 #### [SEUSS -> Smart Ess Unit Spotmarket Switcher]
 
-\#Testa
-
 # inställningar
 
 ## Allmän
@@ -36,7 +34,7 @@
 | `use_vrm`    | Om denna punkt är aktiverad (true) görs ett försök att ansluta till Victron via VRM-portalen.<br/>Detta kräver en användare/lösenord i VRM-portalen                 |
 | `ip_address` | Den lokala IP-adressen för Victron.<br/>Detta krävs om "use_vrm" är inaktiverat (false).<br/>Annars förblir detta fält tomt                                         |
 | `unit_id`    | VRM Portal ID<br/>finns i Inställningar / VRM onlineportal / VRM Portal Id.<br/>Obs: Detta ID krävs för att komma åt Victron även om du inte använder en VRM-portal |
-| `user`       | e-postadress du använder för att ansluta till VRM-portalen                                                                                                          |
+| `user`       | e-postadress som du använder för att ansluta till VRM-portalen                                                                                                      |
 | `password`   | lösenord som du använder för att ansluta till VRM-portalen                                                                                                          |
 
 ## Marknader
