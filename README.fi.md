@@ -1,5 +1,3 @@
-[Tšekki](README.cs.md)-[Tanskan kieli](README.da.md)-[Saksan kieli](README.de.md)-[Englanti](README.md)-[Español ](README.es.md)-[Virolainen](README.et.md)-[Finnish](README.fi.md)-[Ranskan kieli](README.fr.md)-[kreikkalainen](README.el.md)-[italialainen](README.it.md)-[Hollannin kieli](README.nl.md)-[Norjan kieli](README.no.md)-[Kiillottaa](README.pl.md)-[Portugalin kieli](README.pt.md)-[Ruotsin kieli](README.sv.md)-[japanilainen](README.ja.md)
-
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
 # SEUSS
@@ -10,32 +8,32 @@
 
 ## Kenraali
 
-| Asetus          | Merkitys                                                                                                                         |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------- |
-| `time_zone`     | Tärkeä toimintojen oikea ajoitus maantieteellisen sijaintisi perusteella.<br/>Muoto kuten Eurooppa/Wien, Eurooppa/Amsterdam, ... |
-| `log_file_path` | Asettaa vaihtoehtoisen polun, johon lokitiedostot tallennetaan.                                                                  |
-| `log_level`     | Käytetyt lokitasot ovat: INFO, WARNING, ERROR ja DEBUG. katso[Lokitasot](#loglevels)                                             |
+| Asetus          | Merkitys                                                                                                                                |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `time_zone`     | Olennainen toimintojen oikea ajoitus maantieteellisen sijaintisi perusteella.<br/>Muotoile kuten`Europe/Vienna`,`Europe/Amsterdam`, ... |
+| `log_file_path` | Asettaa vaihtoehtoisen polun, johon lokitiedostot tallennetaan.                                                                         |
+| `log_level`     | Käytetyt lokitasot ovat: INFO, WARNING, ERROR ja DEBUG. katso[Lokitasot](#loglevels)                                                    |
 
 ## hinnat
 
-| Asetus                                     | Merkitys                                                                                                                                                                                                                                                                                      |
-| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `use_second_day`                           | Ota käyttöön tai poista käytöstä tämän päivän ja huomisen hintojen vertailu, jos niitä tulee saataville<br/>Huomaa: Jos aktivoit tämän ja hinnat laskevat useiden päivien aikana, on mahdollista, että maksua tai vaihtoa ei tapahdu useisiin päiviin, kunnes alhaisimmat hinnat saavutetaan. |
-| `number_of_lowest_prices_for_charging`     | halvimpien hintojen määrä, jolla lastaus pitäisi/voidaan tehdä                                                                                                                                                                                                                                |
-| `number_of_highest_prices_for_discharging` | kalleimpien hintojen lukumäärä, joilla tyhjennys pitäisi/voidaan suorittaa                                                                                                                                                                                                                    |
-| `charging_price_limit`                     | lataus on aina käytössä tämän hinnan alapuolella<br/>kalleimpien hintojen lukumäärä, joilla tyhjennys pitäisi/voidaan suorittaa                                                                                                                                                               |
+| Asetus                                     | Merkitys                                                                                                                                                                                                                                                                                       |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `use_second_day`                           | Ota käyttöön tai poista käytöstä tämän päivän ja huomisen hintojen vertailu, jos ne tulevat saataville<br/>Huomaa: Jos aktivoit tämän ja hinnat laskevat useiden päivien aikana, on mahdollista, että laskutusta tai vaihtoa ei tapahdu useaan päivään, kunnes alhaisimmat hinnat saavutetaan. |
+| `number_of_lowest_prices_for_charging`     | halvimpien hintojen määrä, jolla lastaus pitäisi/voidaan tehdä                                                                                                                                                                                                                                 |
+| `number_of_highest_prices_for_discharging` | kalleimpien hintojen lukumäärä, joilla tyhjennys pitäisi/voidaan suorittaa                                                                                                                                                                                                                     |
+| `charging_price_limit`                     | lataus on aina käytössä tämän hinnan alapuolella<br/>kalleimpien hintojen lukumäärä, joilla tyhjennys pitäisi/voidaan suorittaa                                                                                                                                                                |
 
 ## ESS-yksiköt
 
 ### Victron
 
-| Asetus       | Merkitys                                                                                                                                                                                 |
-| :----------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `use_vrm`    | Jos tämä piste on käytössä (tosi), Victroniin yritetään muodostaa yhteys VRM-portaalin kautta.<br/>Tämä vaatii käyttäjän/salasanan VRM-portaalissa                                       |
-| `ip_address` | Victronin paikallinen IP-osoite.<br/>Tämä on pakollinen, jos "use_vrm" on poistettu käytöstä (false).<br/>Muuten tämä kenttä jää tyhjäksi                                                |
-| `unit_id`    | VRM-portaalin tunnus<br/>löytyy kohdasta Asetukset / VRM online-portaali / VRM Portal Id.<br/>Huomautus: Tämä tunnus vaaditaan Victronin käyttämiseen, vaikka et käyttäisi VRM-portaalia |
-| `user`       | sähköpostiosoite, jota käytät yhteyden muodostamiseen VRM-portaaliin                                                                                                                     |
-| `password`   | salasana, jota käytät yhteyden muodostamiseen VRM-portaaliin                                                                                                                             |
+| Asetus       | Merkitys                                                                                                                                                                             |
+| :----------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `use_vrm`    | Jos tämä piste on käytössä (tosi), Victroniin yritetään muodostaa yhteys VRM-portaalin kautta.<br/>This requires a user/password in the VRM portal                                   |
+| `ip_address` | Victronin paikallinen IP-osoite.<br/>Tämä on pakollinen, jos "use_vrm" on poistettu käytöstä (false).<br/>Muuten tämä kenttä jää tyhjäksi                                            |
+| `unit_id`    | VRM-portaalin tunnus<br/>löytyy kohdasta Asetukset / VRM online-portaali / VRM Portal Id.<br/>Huomautus: Tämä tunnus vaaditaan Victroniin pääsyyn, vaikka et käyttäisi VRM-portaalia |
+| `user`       | sähköpostiosoite, jota käytät yhteyden muodostamiseen VRM-portaaliin                                                                                                                 |
+| `password`   | salasana, jota käytät yhteyden muodostamiseen VRM-portaaliin                                                                                                                         |
 
 ## Markkinat
 
@@ -70,28 +68,28 @@
 
 # Lokitasot
 
-### VIRHE
+### `ERROR`
 
-ERROR-lokitaso ilmaisee sovelluksen virheolosuhteet, jotka estävät tietyn toiminnon suorittamisen. Vaikka sovellus voi jatkaa toimintaansa alentuneella toiminnallisuuden tai suorituskyvyn tasolla,<br/>ERROR-lokit kertovat ongelmista, jotka tulisi tutkia viipymättä.
+The`ERROR`lokitaso ilmaisee sovelluksen virhetilanteita, jotka estävät tietyn toiminnon suorittamisen. Vaikka sovellus voi jatkaa toimintaansa alentuneella toiminnallisuuden tai suorituskyvyn tasolla,<br/>`ERROR`lokit merkitsevät ongelmia, jotka tulisi tutkia viipymättä.
 
-### VAROITTAA
+### `WARN`
 
-WARN-tasolla kirjatut tapahtumat osoittavat yleensä, että jotain odottamatonta on tapahtunut
+Tapahtumat kirjattu osoitteessa`WARN`taso viittaa tyypillisesti siihen, että jotain odottamatonta on
 tapahtui, mutta sovellus voi jatkaa toimintaansa normaalisti toistaiseksi.
 Sitä käytetään myös merkitsemään ehtoja, jotka tulisi käsitellä viipymättä ennen niitä
 kasvaa sovelluksen ongelmiksi.
 
-### TIEDOT
+### `INFO`
 
-INFO-taso tallentaa järjestelmän tapahtumat, jotka ovat tärkeitä
+The`INFO`taso kaappaa järjestelmän tapahtumat, jotka ovat tärkeitä
 sovelluksen liiketoiminnallinen tarkoitus. Tällaiset tapahtumat kirjataan osoittamaan, että järjestelmä on
 toimivat normaalisti. Tuotantojärjestelmät kirjaavat yleensä oletuksena tällä tasolla
 jotta yhteenveto sovelluksen normaalista toiminnasta näkyy kaikille
  lokien tarkistaminen.
 
-### DEBUG
+### `DEBUG`
 
-DEBUG-tasoa käytetään sellaisten viestien kirjaamiseen, jotka auttavat kehittäjiä tunnistamaan
+The`DEBUG`tasoa käytetään sellaisten viestien kirjaamiseen, jotka auttavat kehittäjiä tunnistamaan
 ongelmia virheenkorjausistunnon aikana. DEBUGissa kirjattujen viestien sisältö
 taso vaihtelee sovelluksesi mukaan, mutta ne sisältävät yleensä
 yksityiskohtaisia ​​tietoja, jotka auttavat sen kehittäjiä vianmäärityksessä
