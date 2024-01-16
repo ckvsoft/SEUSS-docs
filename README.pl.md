@@ -1,5 +1,3 @@
-[Czech](README.cs.md)-[duński](README.da.md)-[Niemiecki](README.de.md) - [język angielski](README.md)-[hiszpański](README.es.md)-[estoński](README.et.md)-[fiński](README.fi.md)-[Francuski](README.fr.md)-[grecki](README.el.md)-[Włoski](README.it.md)-[Holenderski](README.nl.md)-[norweski](README.no.md)-[Polski](README.pl.md)-[portugalski](README.pt.md)-[szwedzki](README.sv.md)-[język japoński](README.ja.md)
-
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
 # SEUSS
@@ -12,7 +10,7 @@
 
 | Ustawienie      | Oznaczający                                                                                                                                          |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `time_zone`     | Niezbędne do prawidłowego harmonogramu operacji w oparciu o Twoją lokalizację geograficzną.<br/>Format taki jak Europa/Wiedeń, Europa/Amsterdam, ... |
+| `time_zone`     | Niezbędne do prawidłowego harmonogramu operacji w oparciu o Twoją lokalizację geograficzną.<br/>Sformatuj jak`Europe/Vienna`,`Europe/Amsterdam`, ... |
 | `log_file_path` | Ustawia alternatywną ścieżkę, w której zapisywane są pliki dziennika.                                                                                |
 | `log_level`     | Używane poziomy dziennika to: INFO, WARNING, ERROR i DEBUG. Widzieć[Poziomy dziennika](#loglevels)                                                   |
 
@@ -47,7 +45,7 @@
 | `primary`  | Jeśli ten rynek jest włączony, ten punkt ustawia go jako rynek pierwotny |
 | `enabled`  | ustaw swój rynek jako włączony/wyłączony                                 |
 
-### Entso-e
+### Enzo jest
 
 | Ustawienie   | Oznaczający                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | :----------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -59,7 +57,7 @@
 
 ### Tibbera
 
-| Ustawienie   | Oznaczający                                                                                                                                                                                                                                                                                                                                      |
+| Ustawienie   | Meaning                                                                                                                                                                                                                                                                                                                                          |
 | :----------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `api_token`  | Aby uzyskać tibber_api_key:<br/>1. zaloguj się za pomocą bezpłatnego lub klienta konta Tibber pod adresem<https://developer.tibber.com/settings/access-token><br/>2. Utwórz token wybierając potrzebne zakresy (wybierz „cena”)<br/>3. Użyj tego linku, aby utworzyć bezpłatne konto na swoim smartfonie:<https://tibber.com/de/invite/ojgfbx2e> |
 | `price_unit` | Ustawić:<br/>"energia" aby skorzystać z cen rynkowych spot (domyślnie),<br/>„total”, aby zastosować ceny całkowite zawierające podatki i opłaty,<br/>„podatek”, aby używać wyłącznie podatków i opłat                                                                                                                                            |
@@ -70,28 +68,28 @@
 
 # Poziomy logowania
 
-### BŁĄD
+### `ERROR`
 
-Poziom dziennika ERROR wskazuje błędy w aplikacji, które utrudniają wykonanie określonej operacji. Chociaż aplikacja może nadal działać z obniżonym poziomem funkcjonalności lub wydajności,<br/>Dzienniki błędów oznaczają problemy, które należy niezwłocznie zbadać.
+The`ERROR`poziom dziennika wskazuje warunki błędów w aplikacji, które utrudniają wykonanie określonej operacji. Chociaż aplikacja może nadal działać z obniżonym poziomem funkcjonalności lub wydajności,<br/>`ERROR`dzienniki oznaczają problemy, które należy niezwłocznie zbadać.
 
-### OSTRZEGAĆ
+### `WARN`
 
-Zdarzenia rejestrowane na poziomie WARN zazwyczaj wskazują, że stało się coś nieoczekiwanego
+Zdarzenia rejestrowane w`WARN`poziom zazwyczaj wskazuje, że wydarzyło się coś nieoczekiwanego
 wystąpił, ale aplikacja może na razie normalnie działać.
 Używa się go również do określenia warunków, którymi należy się niezwłocznie zająć przed ich wystąpieniem
 przerodzić się w problemy z aplikacją.
 
-### INFORMACJE
+### `INFO`
 
-Poziom INFO rejestruje zdarzenia w systemie istotne dla
+The`INFO`Poziom rejestruje zdarzenia w systemie, które są istotne dla
 cel biznesowy aplikacji. Takie zdarzenia są rejestrowane, aby wykazać, że system tak jest
 działa normalnie. Systemy produkcyjne zazwyczaj domyślnie rejestrują na tym poziomie
 tak, aby podsumowanie normalnego zachowania aplikacji było widoczne dla każdego
  przeglądanie logów.
 
-### ODPLUSKWIĆ
+### `DEBUG`
 
-Poziom DEBUG służy do rejestrowania komunikatów, które pomagają programistom w identyfikacji
+The`DEBUG`Poziom służy do rejestrowania komunikatów, które pomagają programistom w identyfikacji
 problemy podczas sesji debugowania. Treść komunikatów logowanych w pliku DEBUG
 Poziom będzie się różnić w zależności od aplikacji, ale zazwyczaj zawierają
 szczegółowe informacje, które pomagają programistom w rozwiązywaniu problemów
