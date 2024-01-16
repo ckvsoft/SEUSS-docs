@@ -1,4 +1,4 @@
-[Tšehhi](README.cs.md)-[taani keel](README.da.md)-[saksa keel](README.de.md)-[English ](README.md)-[hispaania keel](README.es.md)-[Estonian](README.et.md)-[soome keel](README.fi.md)-[prantsuse keel](README.fr.md)-[kreeka keel](README.el.md)-[itaalia keel](README.it.md)-[Nederlands ](README.nl.md)-[Norsk ](README.no.md)-[poola keel](README.pl.md)-[portugali keel](README.pt.md)-[rootsi keel](README.sv.md)-[Jaapani](README.ja.md)
+[tšehhi](README.cs.md)-[taani keel](README.da.md)-[saksa keel](README.de.md)-[Inglise](README.md)-[hispaania keel](README.es.md)-[Estonian](README.et.md)-[soome keel](README.fi.md)-[prantsuse keel](README.fr.md)-[kreeka keel](README.el.md)-[itaalia keel](README.it.md)-[hollandi keel](README.nl.md)-[norra keel](README.no.md)-[poola keel](README.pl.md)-[portugali keel](README.pt.md)-[rootsi keel](README.sv.md)-[Jaapani](README.ja.md)
 
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
@@ -6,15 +6,13 @@
 
 #### [SEUSS -> Smart Ess Unit Spotmarket Switcher]
 
-\#Testi
-
 # Seaded
 
-## General
+## Kindral
 
 | Seadistamine    | Tähendus                                                                                                                                     |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `time_zone`     | Teie geograafilisest asukohast lähtuvate toimingute õige ajastamise jaoks hädavajalik.<br/>Formaat nagu Euroopa/Viin, Euroopa/Amsterdam, ... |
+| `time_zone`     | Teie geograafilisest asukohast lähtuvate toimingute õige ajastamise jaoks hädavajalik.<br/>Vorming nagu Euroopa/Viin, Euroopa/Amsterdam, ... |
 | `log_file_path` | Määrab alternatiivse tee, kuhu logifailid salvestatakse.                                                                                     |
 | `log_level`     | Kasutatud logitasemed on: INFO, WARNING, ERROR ja DEBUG. vaata[Logi tasemed](#loglevels)                                                     |
 
@@ -33,7 +31,7 @@
 
 | Seadistamine | Tähendus                                                                                                                                                                                 |
 | :----------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `use_vrm`    | Kui see punkt on lubatud (tõene), üritatakse Victroniga ühendust luua VRM-i portaali kaudu.<br/>Selleks on vaja VRM-i portaalis kasutajat/parooli                                        |
+| `use_vrm`    | Kui see punkt on lubatud (tõene), üritatakse VRM-i portaali kaudu Victroniga ühendust luua.<br/>Selleks on vaja VRM-i portaalis kasutajat/parooli                                        |
 | `ip_address` | Victroni kohalik IP-aadress.<br/>See on vajalik, kui "use_vrm" on keelatud (false).<br/>Vastasel juhul jääb see väli tühjaks                                                             |
 | `unit_id`    | VRM-i portaali ID<br/>leiate jaotisest Seaded / VRM-i võrguportaal / VRM-i portaali ID.<br/>Märkus. See ID on vajalik Victroni juurdepääsuks isegi siis, kui te ei kasuta VRM-i portaali |
 | `user`       | meiliaadress, mida kasutate VRM-i portaaliga ühenduse loomiseks                                                                                                                          |
@@ -64,7 +62,7 @@
 | Seadistamine | Tähendus                                                                                                                                                                                                                                                                                                                                     |
 | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `api_token`  | Tibber_api_key hankimiseks tehke järgmist.<br/>1. logige sisse tasuta või kliendi Tibberi kontoga aadressil<https://developer.tibber.com/settings/access-token><br/>2. Looge tunnus, valides vajalikud ulatused (valige "hind")<br/>3. Kasutage seda linki oma nutitelefoniga tasuta konto loomiseks:<https://tibber.com/de/invite/ojgfbx2e> |
-| `price_unit` | Seatud:<br/>"energia", et kasutada hetketuru hindu (vaikimisi),<br/>"total" to use the total prices including taxes and fees,<br/>"maks", et kasutada ainult makse ja tasusid                                                                                                                                                                |
+| `price_unit` | Seatud:<br/>"energia", et kasutada hetketuru hindu (vaikimisi),<br/>"kokku", et kasutada koguhindu koos maksude ja lõivudega,<br/>"maks", et kasutada ainult makse ja tasusid                                                                                                                                                                |
 | `primary`    | Kui see turg on lubatud, määrab see punkt selle esmaseks turuks                                                                                                                                                                                                                                                                              |
 | `enabled`    | määrake oma turg lubatuks/keelatuks                                                                                                                                                                                                                                                                                                          |
 
