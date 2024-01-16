@@ -1,5 +1,3 @@
-[tšehhi](README.cs.md)-[taani keel](README.da.md)-[saksa keel](README.de.md)-[Inglise](README.md)-[hispaania keel](README.es.md)-[Estonian](README.et.md)-[soome keel](README.fi.md)-[prantsuse keel](README.fr.md)-[kreeka keel](README.el.md)-[itaalia keel](README.it.md)-[hollandi keel](README.nl.md)-[norra keel](README.no.md)-[poola keel](README.pl.md)-[portugali keel](README.pt.md)-[rootsi keel](README.sv.md)-[Jaapani](README.ja.md)
-
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
 # SEUSS
@@ -12,7 +10,7 @@
 
 | Seadistamine    | Tähendus                                                                                                                                     |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `time_zone`     | Teie geograafilisest asukohast lähtuvate toimingute õige ajastamise jaoks hädavajalik.<br/>Vorming nagu Euroopa/Viin, Euroopa/Amsterdam, ... |
+| `time_zone`     | Teie geograafilisest asukohast lähtuvate toimingute õige ajastamise jaoks hädavajalik.<br/>Vormi nagu`Europe/Vienna`,`Europe/Amsterdam`, ... |
 | `log_file_path` | Määrab alternatiivse tee, kuhu logifailid salvestatakse.                                                                                     |
 | `log_level`     | Kasutatud logitasemed on: INFO, WARNING, ERROR ja DEBUG. vaata[Logi tasemed](#loglevels)                                                     |
 
@@ -31,7 +29,7 @@
 
 | Seadistamine | Tähendus                                                                                                                                                                                 |
 | :----------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `use_vrm`    | Kui see punkt on lubatud (tõene), üritatakse VRM-i portaali kaudu Victroniga ühendust luua.<br/>Selleks on vaja VRM-i portaalis kasutajat/parooli                                        |
+| `use_vrm`    | Kui see punkt on lubatud (tõene), üritatakse Victroniga ühendust luua VRM-i portaali kaudu.<br/>Selleks on vaja VRM-i portaalis kasutajat/parooli                                        |
 | `ip_address` | Victroni kohalik IP-aadress.<br/>See on vajalik, kui "use_vrm" on keelatud (false).<br/>Vastasel juhul jääb see väli tühjaks                                                             |
 | `unit_id`    | VRM-i portaali ID<br/>leiate jaotisest Seaded / VRM-i võrguportaal / VRM-i portaali ID.<br/>Märkus. See ID on vajalik Victroni juurdepääsuks isegi siis, kui te ei kasuta VRM-i portaali |
 | `user`       | meiliaadress, mida kasutate VRM-i portaaliga ühenduse loomiseks                                                                                                                          |
@@ -41,7 +39,7 @@
 
 ### vastama
 
-| Seadistamine | Tähendus                                                        |
+| Seadistamine | Meaning                                                         |
 | :----------- | :-------------------------------------------------------------- |
 | `country`    | Valige asukoht AT või DE                                        |
 | `primary`    | Kui see turg on lubatud, määrab see punkt selle esmaseks turuks |
@@ -70,28 +68,28 @@
 
 # Logitasemed
 
-### VIGA
+### `ERROR`
 
-ERROR logi tase näitab rakenduses esinevaid tõrketingimusi, mis takistavad konkreetse toimingu täitmist. Kuigi rakendus võib jätkata töötamist vähendatud funktsionaalsuse või jõudluse tasemel,<br/>ERROR logid tähistavad probleeme, mida tuleks kiiresti uurida.
+The`ERROR`logi tase näitab rakenduse sees tõrketingimusi, mis takistavad konkreetse toimingu täitmist. Kuigi rakendus võib jätkata töötamist vähendatud funktsionaalsuse või jõudluse tasemel,<br/>`ERROR`logid tähistavad probleeme, mida tuleks kiiresti uurida.
 
-### HOIATUS
+### `WARN`
 
-WARN-tasemel logitud sündmused näitavad tavaliselt, et on midagi ootamatut
+Sündmused, mis on logitud aadressil`WARN`tase näitab tavaliselt midagi ootamatut
 juhtus, kuid rakendus võib esialgu normaalselt edasi töötada.
 Seda kasutatakse ka tingimuste tähistamiseks, millega tuleks enne nende tegemist viivitamatult tegeleda
 areneda rakendusega seotud probleemideks.
 
-### INFO
+### `INFO`
 
-INFO tase fikseerib süsteemis olevad sündmused, mis on olulised
+The`INFO`tase hõlmab sündmusi süsteemis, mis on olulised
 rakenduse äriline eesmärk. Sellised sündmused logitakse, et näidata, et süsteem on
 töötab normaalselt. Tootmissüsteemid logivad tavaliselt sellel tasemel vaikimisi
 nii et rakenduse tavapärase käitumise kokkuvõte oleks kõigile nähtav
  logide ülevaatamine.
 
-### SILU
+### `DEBUG`
 
-SILUMISE taset kasutatakse sõnumite logimiseks, mis aitavad arendajatel tuvastada
+The`DEBUG`taset kasutatakse sõnumite logimiseks, mis aitavad arendajatel tuvastada
 probleemid silumisseansi ajal. SILUMISEL logitud sõnumite sisu
 tase varieerub olenevalt teie rakendusest, kuid tavaliselt sisaldavad need
 üksikasjalik teave, mis aitab selle arendajatel probleeme tõrkeotsingul teha
