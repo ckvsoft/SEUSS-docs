@@ -1,4 +1,4 @@
-[Tcheco](README.cs.md)-[dinamarquês](README.da.md)-[Alemão](README.de.md)-[Inglês](README.md)-[Espanhol](README.es.md)-[estoniano](README.et.md)-[finlandês](README.fi.md)-[Francês](README.fr.md)-[grego](README.el.md)-[italiano](README.it.md)-[Holandês](README.nl.md)-[norueguês](README.no.md)-[polonês](README.pl.md)-[Português](README.pt.md)-[sueco](README.sv.md)-[japonês](README.ja.md)
+[Tcheco](README.cs.md)-[dinamarquês](README.da.md) - [Alemão](README.de.md)-[Inglês](README.md)-[Espanhol](README.es.md)-[estoniano](README.et.md)-[finlandês](README.fi.md)-[Francês](README.fr.md)-[grego](README.el.md)-[italiano](README.it.md)-[Holandês](README.nl.md)-[norueguês](README.no.md)-[polonês](README.pl.md)-[Português](README.pt.md)-[sueco](README.sv.md)-[japonês](README.ja.md)
 
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
@@ -6,7 +6,9 @@
 
 #### [SEUSS -> Comutador Spotmarket de unidade Smart Ess]
 
-# Configuração
+\#Teste
+
+# Configurações
 
 ## Em geral
 
@@ -72,7 +74,7 @@
 
 ### ERRO
 
-O nível de log ERROR indica condições de erro em um aplicativo que dificultam a execução de uma operação específica. Embora o aplicativo possa continuar funcionando com um nível reduzido de funcionalidade ou desempenho,<br/>Os logs de ERRO significam problemas que devem ser investigados imediatamente.
+O nível de log ERROR indica condições de erro em um aplicativo que impedem a execução de uma operação específica. Embora o aplicativo possa continuar funcionando com um nível reduzido de funcionalidade ou desempenho,<br/>Os logs de ERRO significam problemas que devem ser investigados imediatamente.
 
 ### AVISAR
 
