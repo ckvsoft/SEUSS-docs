@@ -1,5 +1,3 @@
-[Čeština ](README.cs.md) - [Dansk ](README.da.md) - [Deutsch ](README.de.md) - [English ](README.md) - [Español ](README.es.md) - [Estonian ](README.et.md) - [Finnish ](README.fi.md) - [Français ](README.fr.md) - [Greek ](README.el.md) - [Italian ](README.it.md) - [Nederlands ](README.nl.md) - [Norsk ](README.no.md) - [Polski ](README.pl.md) - [Portuguese ](README.pt.md) - [Svenska ](README.sv.md) - [日本語 ](README.ja.md)
-
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 # SEUSS
 #### [SEUSS -> Smart Ess Unit Spotmarket Switcher]
@@ -8,7 +6,7 @@
 ## General
 | Setting           | Meaning                                                                                                                             |
 |-------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| `time_zone`       | Essential for correct timing of operations based on your geographic location.<br/> Format like Europe/Vienna, Europe/Amsterdam, ... |
+| `time_zone`       | Essential for correct timing of operations based on your geographic location.<br/> Format like `Europe/Vienna`, `Europe/Amsterdam`, ... |
 | `log_file_path`   | Sets an alternative path to which the log files are saved.                                                                          |
 | `log_level`       | Used Loglevel are: INFO, WARNING, ERROR and DEBUG. see [Log Levels](#loglevels)                                                     |
 
@@ -57,24 +55,24 @@
 
 ***
 # Loglevels
-### ERROR
-The ERROR log level indicates error conditions within an application that hinder the execution of a specific operation. While the application can continue functioning at a reduced level of functionality or performance,<br/>ERROR logs signify issues that should be investigated promptly.
+### `ERROR`
+The `ERROR` log level indicates error conditions within an application that hinder the execution of a specific operation. While the application can continue functioning at a reduced level of functionality or performance,<br/>`ERROR` logs signify issues that should be investigated promptly.
 
-### WARN
-Events logged at the WARN level typically indicate that something unexpected has
+### `WARN`
+Events logged at the `WARN` level typically indicate that something unexpected has
 occurred, but the application can continue to function normally for the time being.
 It is also used to signify conditions that should be promptly addressed before they
 escalate into problems for the application.
 
-### INFO
-The INFO level captures events in the system that are significant to the
+### `INFO`
+The `INFO` level captures events in the system that are significant to the
 application's business purpose. Such events are logged to show that the system is
 operating normally. Production systems typically default to logging at this level
 so that a summary of the application's normal behavior is visible to anyone
  reviewing the logs.
 
-### DEBUG
-The DEBUG level is used for logging messages that aid developers in identifying
+### `DEBUG`
+The `DEBUG` level is used for logging messages that aid developers in identifying
 issues during a debugging session. The content of the messages logged at the DEBUG
 level will vary depending on your application, but they typically contain
 detailed information that assists its developers in troubleshooting problems
