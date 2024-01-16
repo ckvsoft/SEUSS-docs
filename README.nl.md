@@ -6,7 +6,9 @@
 
 #### [SEUSS -> Smart Ess Unit Spotmarketswitcher]
 
-# Configuratie
+\#Test
+
+# Instellingen
 
 ## Algemeen
 
@@ -61,7 +63,7 @@
 
 | Instelling   | Betekenis                                                                                                                                                                                                                                                                                                                                                            |
 | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `api_token`  | Om de tibber_api_key te verkrijgen:<br/>1. log in met een gratis of klant Tibber-account op<https://developer.tibber.com/settings/access-token><br/>2. Maak een token aan door de scopes te selecteren die je nodig hebt (selecteer "prijs")<br/>3. Gebruik deze link om een ​​gratis account aan te maken met je smartphone:<https://tibber.com/de/invite/ojgfbx2e> |
+| `api_token`  | Om de tibber_api_key te verkrijgen:<br/>1. log in met een gratis of klant-Tibber-account op<https://developer.tibber.com/settings/access-token><br/>2. Maak een token aan door de scopes te selecteren die je nodig hebt (selecteer "prijs")<br/>3. Gebruik deze link om een ​​gratis account aan te maken met je smartphone:<https://tibber.com/de/invite/ojgfbx2e> |
 | `price_unit` | Instellen op:<br/>"energie" om de spotmarktprijzen te gebruiken (standaard),<br/>"totaal" om de totale prijzen inclusief belastingen en toeslagen te gebruiken,<br/>"belasting" om alleen de belastingen en toeslagen te gebruiken                                                                                                                                   |
 | `primary`    | Als deze markt mogelijk wordt gemaakt, wordt deze op dit punt ingesteld als de primaire markt                                                                                                                                                                                                                                                                        |
 | `enabled`    | stel uw markt in als ingeschakeld/uitgeschakeld                                                                                                                                                                                                                                                                                                                      |
@@ -72,7 +74,7 @@
 
 ### FOUT
 
-Het ERROR-logniveau geeft foutcondities binnen een applicatie aan die de uitvoering van een specifieke bewerking belemmeren. Hoewel de applicatie kan blijven functioneren met een lager functionaliteit- of prestatieniveau,<br/>ERROR-logboeken duiden op problemen die onmiddellijk moeten worden onderzocht.
+Het ERROR-logboekniveau geeft foutcondities binnen een applicatie aan die de uitvoering van een specifieke bewerking belemmeren. Hoewel de applicatie kan blijven functioneren met een lager functionaliteit- of prestatieniveau,<br/>ERROR-logboeken duiden op problemen die onmiddellijk moeten worden onderzocht.
 
 ### WAARSCHUWEN
 
