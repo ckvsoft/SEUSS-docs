@@ -1,5 +1,3 @@
-[tjekkisk](README.cs.md)-[Dansk](README.da.md)-[tysk](README.de.md)-[engelsk](README.md)-[spansk](README.es.md)-[estisk](README.et.md)-[finsk](README.fi.md)-[fransk](README.fr.md)-[græsk](README.el.md)-[italiensk](README.it.md)-[hollandsk](README.nl.md)-[Norsk](README.no.md)-[Polere](README.pl.md)-[Portuguese ](README.pt.md)-[svensk](README.sv.md)-[japansk](README.ja.md)
-
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
 # SEUSS
@@ -10,32 +8,32 @@
 
 ## Generel
 
-| Indstilling     | Betyder                                                                                                                             |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| `time_zone`     | Vigtigt for korrekt timing af operationer baseret på din geografiske placering.<br/>Formater som Europa/Wien, Europa/Amsterdam, ... |
-| `log_file_path` | Indstiller en alternativ sti, som logfilerne gemmes til.                                                                            |
-| `log_level`     | Brugte Logniveau er: INFO, ADVARSEL, FEJL og DEBUG. se[Log niveauer](#loglevels)                                                    |
+| Indstilling     | Betyder                                                                                                                                   |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `time_zone`     | Vigtigt for korrekt timing af operationer baseret på din geografiske placering.<br/>Formater gerne`Europe/Vienna`,`Europe/Amsterdam`, ... |
+| `log_file_path` | Indstiller en alternativ sti, som logfilerne gemmes til.                                                                                  |
+| `log_level`     | Brugte Logniveau er: INFO, ADVARSEL, FEJL og DEBUG. se[Log niveauer](#loglevels)                                                          |
 
 ## Priser
 
-| Indstilling                                | Betyder                                                                                                                                                                                                                                                                               |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `use_second_day`                           | aktiver/deaktiver for at sammenligne priserne i dag og i morgen, hvis de bliver tilgængelige<br/>Bemærk: Hvis du aktiverer dette og priserne falder over flere dage, er det muligt, at der ikke vil være nogen opkrævning eller skift i flere dage, indtil de laveste priser er nået. |
-| `number_of_lowest_prices_for_charging`     | antallet af billigste priser, som lastning skal/kan ske til                                                                                                                                                                                                                           |
-| `number_of_highest_prices_for_discharging` | antallet af de dyreste priser, hvortil udtømning skal/kan ske                                                                                                                                                                                                                         |
-| `charging_price_limit`                     | opladning er altid aktiveret under denne pris<br/>antallet af de dyreste priser, hvortil udtømning skal/kan ske                                                                                                                                                                       |
+| Indstilling                                | Betyder                                                                                                                                                                                                                                                                                 |
+| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `use_second_day`                           | aktivere/deaktivere for at sammenligne priserne i dag og i morgen, hvis de bliver tilgængelige<br/>Bemærk: Hvis du aktiverer dette og priserne falder over flere dage, er det muligt, at der ikke vil være nogen opkrævning eller skift i flere dage, indtil de laveste priser er nået. |
+| `number_of_lowest_prices_for_charging`     | antallet af billigste priser, som lastning skal/kan ske til                                                                                                                                                                                                                             |
+| `number_of_highest_prices_for_discharging` | antallet af de dyreste priser, hvortil udtømning skal/kan ske                                                                                                                                                                                                                           |
+| `charging_price_limit`                     | opladning er altid aktiveret under denne pris<br/>antallet af de dyreste priser, hvortil udtømning skal/kan ske                                                                                                                                                                         |
 
 ## ESS-enheder
 
 ### Victron
 
-| Indstilling  | Betyder                                                                                                                                                                              |
-| :----------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `use_vrm`    | Hvis dette punkt er aktiveret (sandt), gøres der et forsøg på at oprette forbindelse til Victron via VRM-portalen.<br/>Dette kræver en bruger/adgangskode i VRM-portalen             |
-| `ip_address` | Den lokale IP-adresse på Victron.<br/>Dette er påkrævet, hvis "use_vrm" er deaktiveret (false).<br/>Ellers forbliver dette felt tomt                                                 |
-| `unit_id`    | VRM-portal-id<br/>kan findes i Indstillinger / VRM online portal / VRM Portal Id.<br/>Bemærk: Dette ID er påkrævet for at få adgang til Victron, selvom du ikke bruger en VRM-portal |
-| `user`       | e-mailadresse, du bruger til at oprette forbindelse til VRM-portalen                                                                                                                 |
-| `password`   | adgangskode, du bruger til at oprette forbindelse til VRM-portalen                                                                                                                   |
+| Indstilling  | Betyder                                                                                                                                                                      |
+| :----------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `use_vrm`    | Hvis dette punkt er aktiveret (sandt), gøres der et forsøg på at oprette forbindelse til Victron via VRM-portalen.<br/>Dette kræver en bruger/adgangskode i VRM-portalen     |
+| `ip_address` | Den lokale IP-adresse på Victron.<br/>Dette er påkrævet, hvis "use_vrm" er deaktiveret (falsk).<br/>Ellers forbliver dette felt tomt                                         |
+| `unit_id`    | VRM-portal-id<br/>kan findes i Indstillinger / VRM online portal / VRM Portal Id.<br/>Note: This ID is required to access the Victron even if you are not using a VRM portal |
+| `user`       | e-mailadresse, du bruger til at oprette forbindelse til VRM-portalen                                                                                                         |
+| `password`   | adgangskode, du bruger til at oprette forbindelse til VRM-portalen                                                                                                           |
 
 ## Markeder
 
@@ -59,39 +57,39 @@
 
 ### Tibber
 
-| Indstilling  | Betyder                                                                                                                                                                                                                                                                                                                                |
-| :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `api_token`  | For at hente tibber_api_key:<br/>1. log ind med en gratis eller kunde Tibber konto på<https://developer.tibber.com/settings/access-token><br/>2. Opret et token ved at vælge de omfang, du har brug for (vælg "pris")<br/>3. Brug dette link til at oprette en gratis konto med din smartphone:<https://tibber.com/de/invite/ojgfbx2e> |
-| `price_unit` | Indstillet til:<br/>"energi" til at bruge spotmarkedspriserne (standard),<br/>"i alt" for at bruge de samlede priser inklusive skatter og afgifter,<br/>"skat" for kun at bruge skatter og afgifter                                                                                                                                    |
-| `primary`    | Hvis dette marked er aktiveret, angiver dette punkt det som det primære marked                                                                                                                                                                                                                                                         |
-| `enabled`    | sæt dit marked som aktiveret/deaktiveret                                                                                                                                                                                                                                                                                               |
+| Indstilling  | Betyder                                                                                                                                                                                                                                                                                                                           |
+| :----------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `api_token`  | For at hente tibber_api_key:<br/>1. log ind med en gratis eller kunde Tibber konto på<https://developer.tibber.com/settings/access-token><br/>2. Opret et token ved at vælge de omfang, du har brug for (vælg "pris")<br/>3. Use this link to create a free account with your smartphone: <https://tibber.com/de/invite/ojgfbx2e> |
+| `price_unit` | Indstillet til:<br/>"energi" til at bruge spotmarkedspriserne (standard),<br/>"total" for at bruge de samlede priser inklusive skatter og afgifter,<br/>"skat" for kun at bruge skatter og afgifter                                                                                                                               |
+| `primary`    | Hvis dette marked er aktiveret, angiver dette punkt det som det primære marked                                                                                                                                                                                                                                                    |
+| `enabled`    | sæt dit marked som aktiveret/deaktiveret                                                                                                                                                                                                                                                                                          |
 
 * * *
 
 # Logniveauer
 
-### FEJL
+### `ERROR`
 
-ERROR-logniveauet angiver fejltilstande i en applikation, der hindrer udførelsen af ​​en specifik operation. Selvom applikationen kan fortsætte med at fungere på et reduceret niveau af funktionalitet eller ydeevne,<br/>FEJL-logs angiver problemer, der bør undersøges omgående.
+Det`ERROR`log-niveau angiver fejltilstande i en applikation, der hindrer udførelsen af ​​en specifik operation. Selvom applikationen kan fortsætte med at fungere på et reduceret niveau af funktionalitet eller ydeevne,<br/>`ERROR`logs betyder problemer, der bør undersøges omgående.
 
-### ADVARE
+### `WARN`
 
-Hændelser logget på WARN-niveau indikerer typisk, at noget uventet har gjort det
-sket, men applikationen kan indtil videre fortsætte med at fungere normalt.
+Begivenheder logget på`WARN`niveau indikerer typisk, at noget uventet har
+opstod, men applikationen kan fortsætte med at fungere normalt indtil videre.
 Det bruges også til at markere forhold, der skal behandles omgående, før de
 eskalere til problemer for applikationen.
 
-### INFO
+### `INFO`
 
-INFO-niveauet fanger hændelser i systemet, der er væsentlige for
+Det`INFO`niveau fanger hændelser i systemet, der er væsentlige for
 applikationens forretningsmæssige formål. Sådanne hændelser logges for at vise, at systemet er det
 fungerer normalt. Produktionssystemer bruger typisk som standard logning på dette niveau
 så en oversigt over applikationens normale adfærd er synlig for enhver
  gennemgang af loggene.
 
-### FEJLFINDE
+### `DEBUG`
 
-DEBUG-niveauet bruges til at logge meddelelser, der hjælper udviklere med at identificere
+Det`DEBUG`niveau bruges til at logge beskeder, der hjælper udviklere med at identificere
 problemer under en fejlretningssession. Indholdet af meddelelserne logget på DEBUG
 niveau vil variere afhængigt af din ansøgning, men de indeholder typisk
 detaljerede oplysninger, der hjælper udviklerne med fejlfinding af problemer
