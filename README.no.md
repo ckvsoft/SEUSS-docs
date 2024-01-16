@@ -1,5 +1,3 @@
-[tsjekkisk](README.cs.md)-[dansk](README.da.md)-[tysk](README.de.md)-[Engelsk](README.md)-[spansk](README.es.md)-[estisk](README.et.md)-[finsk](README.fi.md)-[fransk](README.fr.md)-[gresk](README.el.md)-[italiensk](README.it.md)-[nederlandsk](README.nl.md)-[Norsk](README.no.md)-[Pusse](README.pl.md)-[portugisisk](README.pt.md)-[svensk](README.sv.md)-[japansk](README.ja.md)
-
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
 # SEUSS
@@ -10,11 +8,11 @@
 
 ## Generell
 
-| Innstilling     | Betydning                                                                                                                          |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `time_zone`     | Viktig for korrekt timing av operasjoner basert på din geografiske plassering.<br/>Formater som Europa/Wien, Europa/Amsterdam, ... |
-| `log_file_path` | Angir en alternativ bane som loggfilene lagres til.                                                                                |
-| `log_level`     | Brukte loggnivå er: INFO, ADVARSEL, FEIL og DEBUG. se[Loggnivåer](#loglevels)                                                      |
+| Innstilling     | Betydning                                                                                                                              |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `time_zone`     | Viktig for korrekt timing av operasjoner basert på din geografiske plassering.<br/>Formater som`Europe/Vienna`,`Europe/Amsterdam`, ... |
+| `log_file_path` | Angir en alternativ bane som loggfilene lagres til.                                                                                    |
+| `log_level`     | Brukte loggnivå er: INFO, ADVARSEL, FEIL og DEBUG. se[Loggnivåer](#loglevels)                                                          |
 
 ## Priser
 
@@ -49,20 +47,20 @@
 
 ### Enzo er
 
-| Innstilling  | Betydning                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| :----------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `api_token`  | How to get the free api_security_token:<br/>1. Gå til<https://transparency.entsoe.eu/>--> registrer deg og opprett en konto<br/>2. Send en e-post til[transparency@entsoe.eu](mailto:transparency@entsoe.eu)med "Restful API access" i emnelinjen<br/>3. ENTSO-E Helpdesk vil svare på forespørselen din innen 3 virkedager.<br/>4. Generer et sikkerhetstoken på<https://transparency.entsoe.eu/usrm/user/myAccountSettings> |
-| `in_domain`  | For å finne inn og ut domenenøkkelen din, gå til:<br/><https://www.entsoe.eu/data/energy-identification-codes-eic/eic-area-codes-map/>                                                                                                                                                                                                                                                                                        |
-| `out_domain` | som in_domene                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| `primary`    | Hvis dette markedet er aktivert, setter dette punktet det som det primære markedet                                                                                                                                                                                                                                                                                                                                            |
-| `enabled`    | angi markedet som aktivert/deaktivert                                                                                                                                                                                                                                                                                                                                                                                         |
+| Innstilling  | Betydning                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| :----------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `api_token`  | Slik får du det gratis api-sikkerhetstokenet:<br/>1. Gå til<https://transparency.entsoe.eu/>--> registrer deg og opprett en konto<br/>2. Send en e-post til[transparency@entsoe.eu](mailto:transparency@entsoe.eu)med "Restful API access" i emnelinjen<br/>3. ENTSO-E Helpdesk vil svare på forespørselen din innen 3 virkedager.<br/>4. Generer et sikkerhetstoken på<https://transparency.entsoe.eu/usrm/user/myAccountSettings> |
+| `in_domain`  | For å finne inn og ut domenenøkkelen din, gå til:<br/><https://www.entsoe.eu/data/energy-identification-codes-eic/eic-area-codes-map/>                                                                                                                                                                                                                                                                                              |
+| `out_domain` | som in_domene                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| `primary`    | Hvis dette markedet er aktivert, setter dette punktet det som det primære markedet                                                                                                                                                                                                                                                                                                                                                  |
+| `enabled`    | angi markedet som aktivert/deaktivert                                                                                                                                                                                                                                                                                                                                                                                               |
 
 ### Tibber
 
 | Innstilling  | Betydning                                                                                                                                                                                                                                                                                                                    |
 | :----------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `api_token`  | For å få tibber_api_key:<br/>1. logg inn med gratis eller kunde Tibber-konto på<https://developer.tibber.com/settings/access-token><br/>2. Lag et token ved å velge omfanget du trenger (velg "pris")<br/>3. Bruk denne lenken for å opprette en gratis konto med smarttelefonen din:<https://tibber.com/de/invite/ojgfbx2e> |
-| `price_unit` | Satt til:<br/>"energi" for å bruke spotmarkedsprisene (standard),<br/>"totalt" for å bruke totalprisene inkludert skatter og avgifter,<br/>"skatt" for å bruke bare skatter og avgifter                                                                                                                                      |
+| `price_unit` | Satt til:<br/>"energi" for å bruke spotmarkedsprisene (standard),<br/>"total" to use the total prices including taxes and fees,<br/>"skatt" for å bruke bare skatter og avgifter                                                                                                                                             |
 | `primary`    | Hvis dette markedet er aktivert, setter dette punktet det som det primære markedet                                                                                                                                                                                                                                           |
 | `enabled`    | angi markedet som aktivert/deaktivert                                                                                                                                                                                                                                                                                        |
 
@@ -70,30 +68,30 @@
 
 # Loggnivåer
 
-### FEIL
+### `ERROR`
 
-ERROR-loggnivået indikerer feiltilstander i en applikasjon som hindrer utførelse av en spesifikk operasjon. Selv om applikasjonen kan fortsette å fungere med redusert funksjonalitet eller ytelse,<br/>FEIL-logger indikerer problemer som bør undersøkes umiddelbart.
+De`ERROR`loggnivå indikerer feiltilstander i en applikasjon som hindrer utførelse av en spesifikk operasjon. Selv om applikasjonen kan fortsette å fungere med redusert funksjonalitet eller ytelse,<br/>`ERROR`logger indikerer problemer som bør undersøkes umiddelbart.
 
-### VARSLE
+### `WARN`
 
-Hendelser logget på WARN-nivå indikerer vanligvis at noe uventet har gjort det
+Hendelser logget på`WARN`nivå indikerer vanligvis at noe uventet har
 skjedde, men applikasjonen kan fortsette å fungere normalt inntil videre.
 Det brukes også til å angi forhold som bør tas opp umiddelbart før de
 eskalere til problemer for applikasjonen.
 
-### INFO
+### `INFO`
 
-INFO-nivået fanger opp hendelser i systemet som er viktige for
+De`INFO`nivå fanger opp hendelser i systemet som er viktige for
 applikasjonens forretningsformål. Slike hendelser logges for å vise at systemet er det
 fungerer normalt. Produksjonssystemer bruker vanligvis logging på dette nivået
 slik at et sammendrag av applikasjonens normale oppførsel er synlig for alle
  gjennomgang av loggene.
 
-### FEIL
+### `DEBUG`
 
-DEBUG-nivået brukes til å logge meldinger som hjelper utviklere med å identifisere
-problemer under en feilsøkingsøkt. Innholdet i meldingene logget på DEBUG
-nivå vil variere avhengig av søknaden din, men de inneholder vanligvis
-detaljert informasjon som hjelper utviklerne med å feilsøke problemer
-effektivt. Dette kan inkludere variablers tilstand innenfor det omkringliggende omfanget eller
-relevante feilkoder. |
+De`DEBUG` level is used for logging messages that aid developers in identifying
+issues during a debugging session. The content of the messages logged at the DEBUG
+level will vary depending on your application, but they typically contain
+detailed information that assists its developers in troubleshooting problems
+efficiently. This can include variables' state within the surrounding scope or
+relevant error codes.                                                                                                                                    |
