@@ -6,8 +6,6 @@
 
 #### [SEUSS -> Smart Ess Unit Spotmarket Switcher]
 
-\#Prüfen
-
 # Einstellungen
 
 ## Allgemein
@@ -37,7 +35,7 @@
 | `ip_address` | Die lokale IP-Adresse des Victron.<br/>Dies ist erforderlich, wenn „use_vrm“ deaktiviert (false) ist.<br/>Ansonsten bleibt dieses Feld leer                                                      |
 | `unit_id`    | VRM-Portal-ID<br/>finden Sie unter Einstellungen / VRM-Onlineportal / VRM-Portal-ID.<br/>Hinweis: Diese ID ist für den Zugriff auf Victron erforderlich, auch wenn Sie kein VRM-Portal verwenden |
 | `user`       | E-Mail-Adresse, mit der Sie sich mit dem VRM-Portal verbinden                                                                                                                                    |
-| `password`   | Passwort, mit dem Sie sich mit dem VRM-Portal verbinden                                                                                                                                          |
+| `password`   | password you use to connect to VRM portal                                                                                                                                                        |
 
 ## Märkte
 
@@ -74,7 +72,7 @@
 
 ### FEHLER
 
-Die Protokollebene ERROR weist auf Fehlerbedingungen innerhalb einer Anwendung hin, die die Ausführung eines bestimmten Vorgangs behindern. Die Anwendung kann zwar weiterhin mit eingeschränkter Funktionalität oder Leistung funktionieren,<br/>FEHLERprotokolle weisen auf Probleme hin, die umgehend untersucht werden sollten.
+The ERROR log level indicates error conditions within an application that hinder the execution of a specific operation. While the application can continue functioning at a reduced level of functionality or performance,<br/>FEHLERprotokolle weisen auf Probleme hin, die umgehend untersucht werden sollten.
 
 ### WARNEN
 
