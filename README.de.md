@@ -1,5 +1,3 @@
-[Tschechisch](README.cs.md)-[dänisch](README.da.md)-[Deutsch](README.de.md)-[Englisch](README.md)-[Spanisch](README.es.md)-[estnisch](README.et.md)-[finnisch](README.fi.md)-[Französisch](README.fr.md)-[griechisch](README.el.md)-[Italienisch](README.it.md)-[Niederländisch](README.nl.md)-[norwegisch](README.no.md)-[Polieren](README.pl.md)-[Portugiesisch](README.pt.md)-[Schwedisch](README.sv.md)-[japanisch](README.ja.md)
-
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
 # SEUSS
@@ -10,15 +8,15 @@
 
 ## Allgemein
 
-| Einstellung     | Bedeutung                                                                                                                                                       |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `time_zone`     | Unverzichtbar für die korrekte zeitliche Abstimmung von Einsätzen basierend auf Ihrem geografischen Standort.<br/>Format wie Europa/Wien, Europa/Amsterdam, ... |
-| `log_file_path` | Legt einen alternativen Pfad fest, in dem die Protokolldateien gespeichert werden.                                                                              |
-| `log_level`     | Verwendete Loglevel sind: INFO, WARNING, ERROR und DEBUG. sehen[Protokollebenen](#loglevels)                                                                    |
+| Einstellung     | Bedeutung                                                                                                                                                                |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `time_zone`     | Unverzichtbar für die korrekte zeitliche Abstimmung von Einsätzen basierend auf Ihrem geografischen Standort.<br/>Formatieren wie`Europe/Vienna`,`Europe/Amsterdam`, ... |
+| `log_file_path` | Legt einen alternativen Pfad fest, in dem die Protokolldateien gespeichert werden.                                                                                       |
+| `log_level`     | Verwendete Loglevel sind: INFO, WARNING, ERROR und DEBUG. sehen[Protokollebenen](#loglevels)                                                                             |
 
 ## Preise
 
-| Einstellung                                | Bedeutung                                                                                                                                                                                                                                                                                                |
+| Setting                                    | Bedeutung                                                                                                                                                                                                                                                                                                |
 | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `use_second_day`                           | Aktivieren/deaktivieren Sie den Vergleich der Preise von heute und morgen, sofern diese verfügbar sind<br/>Hinweis: Wenn Sie dies aktivieren und die Preise über mehrere Tage sinken, kann es sein, dass mehrere Tage lang nicht geladen oder geschaltet wird, bis die niedrigsten Preise erreicht sind. |
 | `number_of_lowest_prices_for_charging`     | die Anzahl der günstigsten Preise, zu denen verladen werden soll/darf                                                                                                                                                                                                                                    |
@@ -35,7 +33,7 @@
 | `ip_address` | Die lokale IP-Adresse des Victron.<br/>Dies ist erforderlich, wenn „use_vrm“ deaktiviert (false) ist.<br/>Ansonsten bleibt dieses Feld leer                                                      |
 | `unit_id`    | VRM-Portal-ID<br/>finden Sie unter Einstellungen / VRM-Onlineportal / VRM-Portal-ID.<br/>Hinweis: Diese ID ist für den Zugriff auf Victron erforderlich, auch wenn Sie kein VRM-Portal verwenden |
 | `user`       | E-Mail-Adresse, mit der Sie sich mit dem VRM-Portal verbinden                                                                                                                                    |
-| `password`   | password you use to connect to VRM portal                                                                                                                                                        |
+| `password`   | Passwort, mit dem Sie sich mit dem VRM-Portal verbinden                                                                                                                                          |
 
 ## Märkte
 
@@ -70,28 +68,28 @@
 
 # Protokollebenen
 
-### FEHLER
+### `ERROR`
 
-The ERROR log level indicates error conditions within an application that hinder the execution of a specific operation. While the application can continue functioning at a reduced level of functionality or performance,<br/>FEHLERprotokolle weisen auf Probleme hin, die umgehend untersucht werden sollten.
+Der`ERROR`Die Protokollebene weist auf Fehlerbedingungen innerhalb einer Anwendung hin, die die Ausführung eines bestimmten Vorgangs behindern. Die Anwendung kann zwar weiterhin mit eingeschränkter Funktionalität oder Leistung funktionieren,<br/>`ERROR`Protokolle weisen auf Probleme hin, die umgehend untersucht werden sollten.
 
-### WARNEN
+### `WARN`
 
-Auf der WARN-Ebene protokollierte Ereignisse weisen normalerweise darauf hin, dass etwas Unerwartetes eingetreten ist
+Am protokollierte Ereignisse`WARN`Ebene weist normalerweise darauf hin, dass etwas Unerwartetes passiert ist
 aufgetreten, aber die Anwendung kann vorerst weiterhin normal funktionieren.
 Es wird auch verwendet, um Bedingungen zu kennzeichnen, die umgehend behoben werden sollten, bevor sie auftreten
 zu Problemen für die Anwendung führen.
 
-### DIE INFO
+### `INFO`
 
-Die INFO-Ebene erfasst Ereignisse im System, die für das System von Bedeutung sind
+Der`INFO`Die Ebene erfasst Ereignisse im System, die für das System von Bedeutung sind
 Geschäftszweck der Anwendung. Solche Ereignisse werden protokolliert, um zu zeigen, dass das System in Ordnung ist
 normal funktioniert. Produktionssysteme protokollieren normalerweise standardmäßig auf dieser Ebene
 sodass eine Zusammenfassung des normalen Verhaltens der Anwendung für jeden sichtbar ist
  Überprüfung der Protokolle.
 
-### DEBUGGEN
+### `DEBUG`
 
-Die DEBUG-Ebene wird zum Protokollieren von Nachrichten verwendet, die Entwicklern bei der Identifizierung helfen
+Der`DEBUG`Die Ebene wird zum Protokollieren von Nachrichten verwendet, die Entwicklern bei der Identifizierung helfen
 Probleme während einer Debugging-Sitzung. Der Inhalt der beim DEBUG protokollierten Nachrichten
 Der Füllstand hängt von Ihrer Anwendung ab, enthält jedoch in der Regel Folgendes
 detaillierte Informationen, die den Entwicklern bei der Fehlerbehebung helfen
