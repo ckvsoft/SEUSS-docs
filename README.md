@@ -4,7 +4,8 @@
 # SEUSS
 #### [SEUSS -> Smart Ess Unit Spotmarket Switcher]
 
-# Configuration
+#Test
+# Einstellungen
 ## General
 | Setting           | Meaning                                                                                                                             |
 |-------------------|-------------------------------------------------------------------------------------------------------------------------------------|
