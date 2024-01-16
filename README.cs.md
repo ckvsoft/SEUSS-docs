@@ -1,5 +1,3 @@
-[Čeština](README.cs.md)-[dánština](README.da.md)-[Němec](README.de.md)-[Angličtina](README.md)-[španělština](README.es.md)-[estonština](README.et.md)-[finština](README.fi.md)-[francouzština](README.fr.md)-[řecký](README.el.md)-[italština](README.it.md)-[holandský](README.nl.md)-[norský](README.no.md)-[polština](README.pl.md)-[portugalština](README.pt.md)-[švédský](README.sv.md)-[japonský](README.ja.md)
-
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
 # SEUSS
@@ -10,11 +8,11 @@
 
 ## Všeobecné
 
-| Nastavení       | Význam                                                                                                                          |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `time_zone`     | Nezbytné pro správné načasování operací na základě vaší geografické polohy.<br/>Formát jako Evropa/Vídeň, Evropa/Amsterdam, ... |
-| `log_file_path` | Nastaví alternativní cestu, do které se ukládají soubory protokolu.                                                             |
-| `log_level`     | Použité Loglevel jsou: INFO, WARNING, ERROR a DEBUG. vidět[Log úrovně](#loglevels)                                              |
+| Nastavení       | Význam                                                                                                                             |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `time_zone`     | Nezbytné pro správné načasování operací na základě vaší geografické polohy.<br/>Formát jako`Europe/Vienna`,`Europe/Amsterdam`, ... |
+| `log_file_path` | Nastaví alternativní cestu, do které se ukládají soubory protokolu.                                                                |
+| `log_level`     | Použité Loglevel jsou: INFO, WARNING, ERROR a DEBUG. vidět[Log úrovně](#loglevels)                                                 |
 
 ## Ceny
 
@@ -62,7 +60,7 @@
 | Nastavení    | Význam                                                                                                                                                                                                                                                                                                                                                     |
 | :----------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `api_token`  | Chcete-li získat tibber_api_key:<br/>1. přihlaste se pomocí bezplatného nebo zákaznického účtu Tibber na adrese<https://developer.tibber.com/settings/access-token><br/>2. Vytvořte token výběrem požadovaných rozsahů (vyberte "cena")<br/>3. Použijte tento odkaz k vytvoření bezplatného účtu pomocí smartphonu:<https://tibber.com/de/invite/ojgfbx2e> |
-| `price_unit` | Nastaven na:<br/>"energie" k použití spotmarketových cen (výchozí),<br/>„celkem“ pro použití celkových cen včetně daní a poplatků,<br/>"daň" používat pouze daně a poplatky                                                                                                                                                                                |
+| `price_unit` | Nastaven na:<br/>„energie“ pro použití cen na spotovém trhu (výchozí),<br/>„celkem“ pro použití celkových cen včetně daní a poplatků,<br/>"daň" používat pouze daně a poplatky                                                                                                                                                                             |
 | `primary`    | Pokud je tento trh povolen, tento bod jej nastaví jako primární trh                                                                                                                                                                                                                                                                                        |
 | `enabled`    | nastavte svůj trh jako povolený/deaktivovaný                                                                                                                                                                                                                                                                                                               |
 
@@ -70,28 +68,28 @@
 
 # Loglevels
 
-### CHYBA
+### `ERROR`
 
-Úroveň protokolu ERROR označuje chybové stavy v aplikaci, které brání provedení konkrétní operace. I když aplikace může nadále fungovat se sníženou úrovní funkčnosti nebo výkonu,<br/>Protokoly ERROR označují problémy, které by měly být neprodleně prošetřeny.
+The`ERROR`úroveň protokolu označuje chybové stavy v aplikaci, které brání provedení konkrétní operace. I když aplikace může nadále fungovat se sníženou úrovní funkčnosti nebo výkonu,<br/>`ERROR`protokoly označují problémy, které by měly být neprodleně prošetřeny.
 
-### VAROVAT
+### `WARN`
 
-Události zaznamenané na úrovni WARN obvykle naznačují, že došlo k něčemu neočekávanému
+Události zaznamenané na`WARN`úroveň obvykle naznačuje, že došlo k něčemu neočekávanému
 došlo, ale aplikace může prozatím normálně fungovat.
 Používá se také k označení podmínek, které by měly být okamžitě vyřešeny před jejich vznikem
 eskalovat do problémů aplikace.
 
-### INFO
+### `INFO`
 
-Úroveň INFO zachycuje události v systému, které jsou pro systém důležité
+The`INFO`úroveň zachycuje události v systému, které jsou pro ni významné
 obchodní účel aplikace. Takové události jsou protokolovány, aby bylo vidět, že systém ano
 normálně fungující. Produkční systémy obvykle standardně používají protokolování na této úrovni
 takže souhrn běžného chování aplikace je viditelný pro každého
  revize protokolů.
 
-### LADIT
+### `DEBUG`
 
-Úroveň DEBUG se používá pro protokolování zpráv, které pomáhají vývojářům při identifikaci
+The`DEBUG`úroveň se používá pro protokolování zpráv, které pomáhají vývojářům při identifikaci
 problémy během relace ladění. Obsah zpráv zaznamenaných na DEBUG
 úroveň se bude lišit v závislosti na vaší aplikaci, ale obvykle obsahují
 podrobné informace, které pomáhají jeho vývojářům při odstraňování problémů
