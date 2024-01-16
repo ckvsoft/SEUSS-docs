@@ -6,7 +6,9 @@
 
 #### [SEUSS -> Smart Ess Unit Spotmarket Switcher]
 
-# Aufbau
+\#Prüfen
+
+# Einstellungen
 
 ## Allgemein
 
@@ -18,7 +20,7 @@
 
 ## Preise
 
-| Setting                                    | Bedeutung                                                                                                                                                                                                                                                                                                |
+| Einstellung                                | Bedeutung                                                                                                                                                                                                                                                                                                |
 | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `use_second_day`                           | Aktivieren/deaktivieren Sie den Vergleich der Preise von heute und morgen, sofern diese verfügbar sind<br/>Hinweis: Wenn Sie dies aktivieren und die Preise über mehrere Tage sinken, kann es sein, dass mehrere Tage lang nicht geladen oder geschaltet wird, bis die niedrigsten Preise erreicht sind. |
 | `number_of_lowest_prices_for_charging`     | die Anzahl der günstigsten Preise, zu denen verladen werden soll/darf                                                                                                                                                                                                                                    |
