@@ -6,8 +6,6 @@
 
 #### [SEUSS -> Smart Ess Unit Spotmarket Switcher]
 
-\#Test
-
 # Nastavení
 
 ## Všeobecné
@@ -64,7 +62,7 @@
 | Nastavení    | Význam                                                                                                                                                                                                                                                                                                                                                     |
 | :----------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `api_token`  | Chcete-li získat tibber_api_key:<br/>1. přihlaste se pomocí bezplatného nebo zákaznického účtu Tibber na adrese<https://developer.tibber.com/settings/access-token><br/>2. Vytvořte token výběrem požadovaných rozsahů (vyberte "cena")<br/>3. Použijte tento odkaz k vytvoření bezplatného účtu pomocí smartphonu:<https://tibber.com/de/invite/ojgfbx2e> |
-| `price_unit` | Nastaven na:<br/>„energie“ pro použití cen na spotovém trhu (výchozí),<br/>„celkem“ pro použití celkových cen včetně daní a poplatků,<br/>"daň" používat pouze daně a poplatky                                                                                                                                                                             |
+| `price_unit` | Nastaven na:<br/>"energie" k použití spotmarketových cen (výchozí),<br/>„celkem“ pro použití celkových cen včetně daní a poplatků,<br/>"daň" používat pouze daně a poplatky                                                                                                                                                                                |
 | `primary`    | Pokud je tento trh povolen, tento bod jej nastaví jako primární trh                                                                                                                                                                                                                                                                                        |
 | `enabled`    | nastavte svůj trh jako povolený/deaktivovaný                                                                                                                                                                                                                                                                                                               |
 
