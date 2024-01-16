@@ -1,5 +1,3 @@
-[Tcheco](README.cs.md)-[dinamarquês](README.da.md)-[Alemão](README.de.md)-[Inglês](README.md)-[Espanhol](README.es.md)-[estoniano](README.et.md)-[finlandês](README.fi.md)-[Francês](README.fr.md)-[grego](README.el.md)-[italiano](README.it.md)-[Holandês](README.nl.md)-[norueguês](README.no.md)-[polonês](README.pl.md)-[Português](README.pt.md)-[sueco](README.sv.md)-[japonês](README.ja.md)
-
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
 # SEUSS
@@ -10,11 +8,11 @@
 
 ## Em geral
 
-| Contexto        | Significado                                                                                                                               |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `time_zone`     | Essencial para o timing correto das operações com base na sua localização geográfica.<br/>Formato como Europa/Viena, Europa/Amsterdã, ... |
-| `log_file_path` | Define um caminho alternativo no qual os arquivos de log serão salvos.                                                                    |
-| `log_level`     | Os níveis de log usados ​​são: INFO, WARNING, ERROR e DEBUG. ver[Níveis de registro](#loglevels)                                          |
+| Contexto        | Significado                                                                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| `time_zone`     | Essencial para o timing correto das operações com base na sua localização geográfica.<br/>Formatar como`Europe/Vienna`,`Europe/Amsterdam`, ... |
+| `log_file_path` | Define um caminho alternativo no qual os arquivos de log serão salvos.                                                                         |
+| `log_level`     | Os níveis de log usados ​​são: INFO, WARNING, ERROR e DEBUG. ver[Níveis de registro](#loglevels)                                               |
 
 ## Preços
 
@@ -59,10 +57,10 @@
 
 ### Tiber
 
-| Contexto     | Meaning                                                                                                                                                                                                                                                                                                                                      |
+| Contexto     | Significado                                                                                                                                                                                                                                                                                                                                  |
 | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `api_token`  | Para obter o tibber_api_key:<br/>1. faça login com uma conta Tibber gratuita ou de cliente em<https://developer.tibber.com/settings/access-token><br/>2. Crie um token selecionando os escopos necessários (selecione "preço")<br/>3. Use este link para criar uma conta gratuita com seu smartphone:<https://tibber.com/de/invite/ojgfbx2e> |
-| `price_unit` | Definido como:<br/>"energia" para usar os preços do mercado spot (padrão),<br/>"total" para usar os preços totais, incluindo impostos e taxas,<br/>"imposto" para usar apenas os impostos e taxas                                                                                                                                            |
+| `price_unit` | Definido como:<br/>"energia" para usar os preços do mercado spot (padrão),<br/>"total" para usar os preços totais incluindo impostos e taxas,<br/>"imposto" para usar apenas os impostos e taxas                                                                                                                                             |
 | `primary`    | Se este mercado estiver habilitado, este ponto o define como o mercado primário                                                                                                                                                                                                                                                              |
 | `enabled`    | defina seu mercado como ativado/desativado                                                                                                                                                                                                                                                                                                   |
 
@@ -70,28 +68,28 @@
 
 # Níveis de registro
 
-### ERRO
+### `ERROR`
 
-O nível de log ERROR indica condições de erro em um aplicativo que dificultam a execução de uma operação específica. Embora o aplicativo possa continuar funcionando com um nível reduzido de funcionalidade ou desempenho,<br/>Os logs de ERRO significam problemas que devem ser investigados imediatamente.
+O`ERROR`nível de log indica condições de erro dentro de um aplicativo que dificultam a execução de uma operação específica. Embora o aplicativo possa continuar funcionando com um nível reduzido de funcionalidade ou desempenho,<br/>`ERROR`logs significam problemas que devem ser investigados imediatamente.
 
-### AVISAR
+### `WARN`
 
-Os eventos registrados no nível WARN normalmente indicam que algo inesperado aconteceu.
+Eventos registrados no`WARN`nível normalmente indicam que algo inesperado aconteceu
 ocorreu, mas o aplicativo pode continuar funcionando normalmente por enquanto.
 Também é usado para significar condições que devem ser prontamente tratadas antes de ocorrerem.
 se transformar em problemas para o aplicativo.
 
-### INFORMAÇÕES
+### `INFO`
 
-O nível INFO captura eventos no sistema que são significativos para o
+O`INFO`nível captura eventos no sistema que são significativos para o
 finalidade comercial do aplicativo. Tais eventos são registrados para mostrar que o sistema está
 operando normalmente. Os sistemas de produção normalmente usam como padrão o registro em log neste nível
 para que um resumo do comportamento normal do aplicativo fique visível para qualquer pessoa
  revisando os registros.
 
-### DEPURAR
+### `DEBUG`
 
-O nível DEBUG é usado para registrar mensagens que ajudam os desenvolvedores a identificar
+O`DEBUG`nível é usado para registrar mensagens que ajudam os desenvolvedores a identificar
 problemas durante uma sessão de depuração. O conteúdo das mensagens registradas no DEBUG
 nível irá variar dependendo da sua aplicação, mas eles normalmente contêm
 informações detalhadas que auxiliam seus desenvolvedores na solução de problemas
