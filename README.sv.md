@@ -6,7 +6,9 @@
 
 #### [SEUSS -> Smart Ess Unit Spotmarket Switcher]
 
-# Konfiguration
+\#Testa
+
+# inställningar
 
 ## Allmän
 
@@ -32,9 +34,9 @@
 | Miljö        | Menande                                                                                                                                                             |
 | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `use_vrm`    | Om denna punkt är aktiverad (true) görs ett försök att ansluta till Victron via VRM-portalen.<br/>Detta kräver en användare/lösenord i VRM-portalen                 |
-| `ip_address` | Den lokala IP-adressen för Victron.<br/>Detta krävs om "use_vrm" är inaktiverat (falskt).<br/>Annars förblir detta fält tomt                                        |
+| `ip_address` | Den lokala IP-adressen för Victron.<br/>Detta krävs om "use_vrm" är inaktiverat (false).<br/>Annars förblir detta fält tomt                                         |
 | `unit_id`    | VRM Portal ID<br/>finns i Inställningar / VRM onlineportal / VRM Portal Id.<br/>Obs: Detta ID krävs för att komma åt Victron även om du inte använder en VRM-portal |
-| `user`       | e-postadress som du använder för att ansluta till VRM-portalen                                                                                                      |
+| `user`       | e-postadress du använder för att ansluta till VRM-portalen                                                                                                          |
 | `password`   | lösenord som du använder för att ansluta till VRM-portalen                                                                                                          |
 
 ## Marknader
@@ -49,13 +51,13 @@
 
 ### Enzo är
 
-| Miljö        | Menande                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `api_token`  | Så här får du den gratis api-säkerhetstoken:<br/>1. Gå till<https://transparency.entsoe.eu/>--> registrera dig och skapa ett konto<br/>2. Send an email to [transparency@entsoe.eu](mailto:transparency@entsoe.eu)med "Restful API access" i ämnesraden<br/>3. ENTSO-E Helpdesk kommer att svara på din förfrågan inom 3 arbetsdagar.<br/>4. Generera en säkerhetstoken på<https://transparency.entsoe.eu/usrm/user/myAccountSettings> |
-| `in_domain`  | För att ta reda på din in- och utdomännyckel, gå till:<br/><https://www.entsoe.eu/data/energy-identification-codes-eic/eic-area-codes-map/>                                                                                                                                                                                                                                                                                            |
-| `out_domain` | som in_domän                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| `primary`    | Om denna marknad är aktiverad anger denna punkt den som den primära marknaden                                                                                                                                                                                                                                                                                                                                                          |
-| `enabled`    | ställ in din marknad som aktiverad/inaktiverad                                                                                                                                                                                                                                                                                                                                                                                         |
+| Miljö        | Menande                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| :----------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `api_token`  | Så här får du den gratis api-säkerhetstoken:<br/>1. Gå till<https://transparency.entsoe.eu/>--> registrera dig och skapa ett konto<br/>2. Skicka ett e-postmeddelande till[transparency@entsoe.eu](mailto:transparency@entsoe.eu)med "Restful API access" i ämnesraden<br/>3. ENTSO-E Helpdesk kommer att svara på din förfrågan inom 3 arbetsdagar.<br/>4. Generera en säkerhetstoken på<https://transparency.entsoe.eu/usrm/user/myAccountSettings> |
+| `in_domain`  | För att ta reda på din in- och utdomännyckel, gå till:<br/><https://www.entsoe.eu/data/energy-identification-codes-eic/eic-area-codes-map/>                                                                                                                                                                                                                                                                                                           |
+| `out_domain` | som in_domän                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `primary`    | Om denna marknad är aktiverad anger denna punkt den som den primära marknaden                                                                                                                                                                                                                                                                                                                                                                         |
+| `enabled`    | ställ in din marknad som aktiverad/inaktiverad                                                                                                                                                                                                                                                                                                                                                                                                        |
 
 ### Tibber
 
