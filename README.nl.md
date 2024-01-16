@@ -1,5 +1,3 @@
-[Tsjechisch](README.cs.md)-[Deens](README.da.md)-[Duits](README.de.md)-[Engels](README.md)-[Spaans](README.es.md)-[Ests](README.et.md)-[Fins](README.fi.md)-[Frans](README.fr.md)-[Grieks](README.el.md)-[Italiaans](README.it.md)-[Nederlands](README.nl.md)-[Noors](README.no.md)-[Pools](README.pl.md)-[Portugees](README.pt.md)-[Zweeds](README.sv.md)-[Japans](README.ja.md)
-
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
 # SEUSS
@@ -10,11 +8,11 @@
 
 ## Algemeen
 
-| Instelling      | Betekenis                                                                                                                                    |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| `time_zone`     | Essentieel voor de juiste timing van activiteiten op basis van uw geografische locatie.<br/>Format like Europe/Vienna, Europe/Amsterdam, ... |
-| `log_file_path` | Stelt een alternatief pad in waarnaar de logbestanden worden opgeslagen.                                                                     |
-| `log_level`     | Gebruikte Loglevel zijn: INFO, WAARSCHUWING, ERROR en DEBUG. zien[Logniveaus](#loglevels)                                                    |
+| Instelling      | Betekenis                                                                                                                                        |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `time_zone`     | Essentieel voor de juiste timing van activiteiten op basis van uw geografische locatie.<br/>Formaat zoals`Europe/Vienna`,`Europe/Amsterdam`, ... |
+| `log_file_path` | Stelt een alternatief pad in waarnaar de logbestanden worden opgeslagen.                                                                         |
+| `log_level`     | Gebruikte Loglevel zijn: INFO, WAARSCHUWING, ERROR en DEBUG. zien[Logniveaus](#loglevels)                                                        |
 
 ## Prijzen
 
@@ -23,7 +21,7 @@
 | `use_second_day`                           | in-/uitschakelen om de prijzen van vandaag en morgen te vergelijken als deze beschikbaar komen<br/>Let op: Als u dit activeert en de prijzen dalen over meerdere dagen, kan het zijn dat er meerdere dagen niet wordt geladen of geschakeld totdat de laagste prijzen zijn bereikt. |
 | `number_of_lowest_prices_for_charging`     | het aantal goedkoopste prijzen waartegen geladen moet/mag worden                                                                                                                                                                                                                    |
 | `number_of_highest_prices_for_discharging` | het aantal van de duurste prijzen waartegen geloosd moet/mag worden                                                                                                                                                                                                                 |
-| `charging_price_limit`                     | Laden is altijd mogelijk onder deze prijs<br/>het aantal van de duurste prijzen waartegen geloosd moet/mag worden                                                                                                                                                                   |
+| `charging_price_limit`                     | Onder deze prijs is opladen altijd mogelijk<br/>het aantal van de duurste prijzen waartegen geloosd moet/mag worden                                                                                                                                                                 |
 
 ## ESS-eenheden
 
@@ -61,7 +59,7 @@
 
 | Instelling   | Betekenis                                                                                                                                                                                                                                                                                                                                                            |
 | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `api_token`  | Om de tibber_api_key te verkrijgen:<br/>1. log in met een gratis of klant Tibber-account op<https://developer.tibber.com/settings/access-token><br/>2. Maak een token aan door de scopes te selecteren die je nodig hebt (selecteer "prijs")<br/>3. Gebruik deze link om een ​​gratis account aan te maken met je smartphone:<https://tibber.com/de/invite/ojgfbx2e> |
+| `api_token`  | Om de tibber_api_key te verkrijgen:<br/>1. log in met een gratis of klant-Tibber-account op<https://developer.tibber.com/settings/access-token><br/>2. Maak een token aan door de scopes te selecteren die je nodig hebt (selecteer "prijs")<br/>3. Gebruik deze link om een ​​gratis account aan te maken met je smartphone:<https://tibber.com/de/invite/ojgfbx2e> |
 | `price_unit` | Instellen op:<br/>"energie" om de spotmarktprijzen te gebruiken (standaard),<br/>"totaal" om de totale prijzen inclusief belastingen en toeslagen te gebruiken,<br/>"belasting" om alleen de belastingen en toeslagen te gebruiken                                                                                                                                   |
 | `primary`    | Als deze markt mogelijk wordt gemaakt, wordt deze op dit punt ingesteld als de primaire markt                                                                                                                                                                                                                                                                        |
 | `enabled`    | stel uw markt in als ingeschakeld/uitgeschakeld                                                                                                                                                                                                                                                                                                                      |
@@ -70,28 +68,28 @@
 
 # Logniveaus
 
-### FOUT
+### `ERROR`
 
-Het ERROR-logniveau geeft foutcondities binnen een applicatie aan die de uitvoering van een specifieke bewerking belemmeren. Hoewel de applicatie kan blijven functioneren met een lager functionaliteit- of prestatieniveau,<br/>ERROR-logboeken duiden op problemen die onmiddellijk moeten worden onderzocht.
+De`ERROR`logniveau geeft foutcondities binnen een applicatie aan die de uitvoering van een specifieke bewerking belemmeren. Hoewel de applicatie kan blijven functioneren met een lager functionaliteit- of prestatieniveau,<br/>`ERROR`logboeken duiden op problemen die onmiddellijk moeten worden onderzocht.
 
-### WAARSCHUWEN
+### `WARN`
 
-Gebeurtenissen geregistreerd op het WARN-niveau geven doorgaans aan dat er iets onverwachts is gebeurd
+Gebeurtenissen geregistreerd bij de`WARN`niveau geeft doorgaans aan dat er iets onverwachts is gebeurd
 opgetreden, maar de applicatie kan voorlopig normaal blijven functioneren.
 Het wordt ook gebruikt om omstandigheden aan te duiden die onmiddellijk moeten worden aangepakt voordat ze zich voordoen
 escaleren tot problemen voor de toepassing.
 
-### INFO
+### `INFO`
 
-Het INFO-niveau legt gebeurtenissen in het systeem vast die van belang zijn voor de
+De`INFO`niveau legt gebeurtenissen in het systeem vast die van belang zijn voor de
 het zakelijke doel van de applicatie. Dergelijke gebeurtenissen worden geregistreerd om aan te tonen dat het systeem dat doet
 normaal functioneren. Productiesystemen zijn doorgaans standaard ingesteld op logboekregistratie op dit niveau
 zodat een samenvatting van het normale gedrag van de applicatie voor iedereen zichtbaar is
  het bekijken van de logboeken.
 
-### DEBUGGEN
+### `DEBUG`
 
-Het DEBUG-niveau wordt gebruikt voor het loggen van berichten die ontwikkelaars helpen bij het identificeren
+De`DEBUG`niveau wordt gebruikt voor het loggen van berichten die ontwikkelaars helpen bij het identificeren
 problemen tijdens een foutopsporingssessie. De inhoud van de berichten die zijn vastgelegd bij DEBUG
 niveau varieert afhankelijk van uw toepassing, maar bevat doorgaans
 gedetailleerde informatie die de ontwikkelaars helpt bij het oplossen van problemen
