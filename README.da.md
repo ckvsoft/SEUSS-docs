@@ -6,7 +6,9 @@
 
 #### [SEUSS -> Smart Ess Unit Spotmarket Switcher]
 
-# Konfiguration
+\#Prøve
+
+# Indstillinger
 
 ## Generel
 
@@ -18,12 +20,12 @@
 
 ## Priser
 
-| Indstilling                                | Betyder                                                                                                                                                                                                                                                                               |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `use_second_day`                           | aktiver/deaktiver for at sammenligne priserne i dag og i morgen, hvis de bliver tilgængelige<br/>Bemærk: Hvis du aktiverer dette og priserne falder over flere dage, er det muligt, at der ikke vil være nogen opkrævning eller skift i flere dage, indtil de laveste priser er nået. |
-| `number_of_lowest_prices_for_charging`     | antallet af billigste priser, som lastning skal/kan ske til                                                                                                                                                                                                                           |
-| `number_of_highest_prices_for_discharging` | antallet af de dyreste priser, hvortil udtømning skal/kan ske                                                                                                                                                                                                                         |
-| `charging_price_limit`                     | opladning er altid aktiveret under denne pris<br/>antallet af de dyreste priser, hvortil udtømning skal/kan ske                                                                                                                                                                       |
+| Indstilling                                | Betyder                                                                                                                                                                                                                                                                                 |
+| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `use_second_day`                           | aktivere/deaktivere for at sammenligne priserne i dag og i morgen, hvis de bliver tilgængelige<br/>Bemærk: Hvis du aktiverer dette og priserne falder over flere dage, er det muligt, at der ikke vil være nogen opkrævning eller skift i flere dage, indtil de laveste priser er nået. |
+| `number_of_lowest_prices_for_charging`     | antallet af billigste priser, som lastning skal/kan ske til                                                                                                                                                                                                                             |
+| `number_of_highest_prices_for_discharging` | antallet af de dyreste priser, hvortil udtømning skal/kan ske                                                                                                                                                                                                                           |
+| `charging_price_limit`                     | opladning er altid aktiveret under denne pris<br/>antallet af de dyreste priser, hvortil udtømning skal/kan ske                                                                                                                                                                         |
 
 ## ESS-enheder
 
@@ -32,9 +34,9 @@
 | Indstilling  | Betyder                                                                                                                                                                              |
 | :----------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `use_vrm`    | Hvis dette punkt er aktiveret (sandt), gøres der et forsøg på at oprette forbindelse til Victron via VRM-portalen.<br/>Dette kræver en bruger/adgangskode i VRM-portalen             |
-| `ip_address` | Den lokale IP-adresse på Victron.<br/>Dette er påkrævet, hvis "use_vrm" er deaktiveret (false).<br/>Ellers forbliver dette felt tomt                                                 |
+| `ip_address` | Den lokale IP-adresse på Victron.<br/>Dette er påkrævet, hvis "use_vrm" er deaktiveret (falsk).<br/>Ellers forbliver dette felt tomt                                                 |
 | `unit_id`    | VRM-portal-id<br/>kan findes i Indstillinger / VRM online portal / VRM Portal Id.<br/>Bemærk: Dette ID er påkrævet for at få adgang til Victron, selvom du ikke bruger en VRM-portal |
-| `user`       | mailadresse, du bruger til at oprette forbindelse til VRM-portalen                                                                                                                   |
+| `user`       | e-mailadresse, du bruger til at oprette forbindelse til VRM-portalen                                                                                                                 |
 | `password`   | adgangskode, du bruger til at oprette forbindelse til VRM-portalen                                                                                                                   |
 
 ## Markeder
@@ -62,7 +64,7 @@
 | Indstilling  | Betyder                                                                                                                                                                                                                                                                                                                                |
 | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `api_token`  | For at hente tibber_api_key:<br/>1. log ind med en gratis eller kunde Tibber konto på<https://developer.tibber.com/settings/access-token><br/>2. Opret et token ved at vælge de omfang, du har brug for (vælg "pris")<br/>3. Brug dette link til at oprette en gratis konto med din smartphone:<https://tibber.com/de/invite/ojgfbx2e> |
-| `price_unit` | Indstillet til:<br/>"energi" til at bruge spotmarkedspriserne (standard),<br/>"i alt" for at bruge de samlede priser inklusive skatter og afgifter,<br/>"skat" for kun at bruge skatter og afgifter                                                                                                                                    |
+| `price_unit` | Indstillet til:<br/>"energi" til at bruge spotmarkedspriserne (standard),<br/>"total" for at bruge de samlede priser inklusive skatter og afgifter,<br/>"skat" for kun at bruge skatter og afgifter                                                                                                                                    |
 | `primary`    | Hvis dette marked er aktiveret, angiver dette punkt det som det primære marked                                                                                                                                                                                                                                                         |
 | `enabled`    | sæt dit marked som aktiveret/deaktiveret                                                                                                                                                                                                                                                                                               |
 
@@ -83,11 +85,11 @@ eskalere til problemer for applikationen.
 
 ### INFO
 
-The INFO level captures events in the system that are significant to the
-application's business purpose. Such events are logged to show that the system is
-operating normally. Production systems typically default to logging at this level
-so that a summary of the application's normal behavior is visible to anyone
- reviewing the logs.
+INFO-niveauet fanger hændelser i systemet, der er væsentlige for
+applikationens forretningsmæssige formål. Sådanne hændelser logges for at vise, at systemet er det
+fungerer normalt. Produktionssystemer bruger typisk som standard logning på dette niveau
+så en oversigt over applikationens normale adfærd er synlig for enhver
+ gennemgang af loggene.
 
 ### FEJLFINDE
 
