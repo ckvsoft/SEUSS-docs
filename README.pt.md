@@ -1,12 +1,10 @@
-[Tcheco](README.cs.md)-[dinamarquês](README.da.md) - [Alemão](README.de.md)-[Inglês](README.md)-[Espanhol](README.es.md)-[estoniano](README.et.md)-[finlandês](README.fi.md)-[Francês](README.fr.md)-[grego](README.el.md)-[italiano](README.it.md)-[Holandês](README.nl.md)-[norueguês](README.no.md)-[polonês](README.pl.md)-[Português](README.pt.md)-[sueco](README.sv.md)-[japonês](README.ja.md)
+[Tcheco](README.cs.md)-[dinamarquês](README.da.md)-[Alemão](README.de.md)-[Inglês](README.md)-[Espanhol](README.es.md)-[estoniano](README.et.md)-[finlandês](README.fi.md)-[Francês](README.fr.md)-[grego](README.el.md)-[italiano](README.it.md)-[Holandês](README.nl.md)-[norueguês](README.no.md)-[polonês](README.pl.md)-[Português](README.pt.md)-[sueco](README.sv.md)-[japonês](README.ja.md)
 
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
 # SEUSS
 
 #### [SEUSS -> Comutador Spotmarket de unidade Smart Ess]
-
-\#Teste
 
 # Configurações
 
@@ -61,10 +59,10 @@
 
 ### Tiber
 
-| Contexto     | Significado                                                                                                                                                                                                                                                                                                                                  |
+| Contexto     | Meaning                                                                                                                                                                                                                                                                                                                                      |
 | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `api_token`  | Para obter o tibber_api_key:<br/>1. faça login com uma conta Tibber gratuita ou de cliente em<https://developer.tibber.com/settings/access-token><br/>2. Crie um token selecionando os escopos necessários (selecione "preço")<br/>3. Use este link para criar uma conta gratuita com seu smartphone:<https://tibber.com/de/invite/ojgfbx2e> |
-| `price_unit` | Definido como:<br/>"energia" para usar os preços do mercado spot (padrão),<br/>"total" para usar os preços totais incluindo impostos e taxas,<br/>"imposto" para usar apenas os impostos e taxas                                                                                                                                             |
+| `price_unit` | Definido como:<br/>"energia" para usar os preços do mercado spot (padrão),<br/>"total" para usar os preços totais, incluindo impostos e taxas,<br/>"imposto" para usar apenas os impostos e taxas                                                                                                                                            |
 | `primary`    | Se este mercado estiver habilitado, este ponto o define como o mercado primário                                                                                                                                                                                                                                                              |
 | `enabled`    | defina seu mercado como ativado/desativado                                                                                                                                                                                                                                                                                                   |
 
@@ -74,7 +72,7 @@
 
 ### ERRO
 
-O nível de log ERROR indica condições de erro em um aplicativo que impedem a execução de uma operação específica. Embora o aplicativo possa continuar funcionando com um nível reduzido de funcionalidade ou desempenho,<br/>Os logs de ERRO significam problemas que devem ser investigados imediatamente.
+O nível de log ERROR indica condições de erro em um aplicativo que dificultam a execução de uma operação específica. Embora o aplicativo possa continuar funcionando com um nível reduzido de funcionalidade ou desempenho,<br/>Os logs de ERRO significam problemas que devem ser investigados imediatamente.
 
 ### AVISAR
 
