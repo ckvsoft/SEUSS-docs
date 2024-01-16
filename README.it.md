@@ -1,5 +1,3 @@
-[ceco](README.cs.md)-[danese](README.da.md)-[Tedesco](README.de.md)-[Inglese](README.md)-[spagnolo](README.es.md)-[Estone](README.et.md)-[finlandese](README.fi.md)-[Francese](README.fr.md)-[greco](README.el.md)-[Italiano](README.it.md)-[Olandese](README.nl.md)-[norvegese](README.no.md)-[Polacco](README.pl.md)-[portoghese](README.pt.md)-[svedese](README.sv.md)-[giapponese](README.ja.md)
-
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
 # SEUSS
@@ -10,11 +8,11 @@
 
 ## Generale
 
-| Collocamento    | Senso                                                                                                                                                        |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `time_zone`     | Indispensabile per una corretta tempistica delle operazioni in base alla propria posizione geografica.<br/>Formato come Europa/Vienna, Europa/Amsterdam, ... |
-| `log_file_path` | Imposta un percorso alternativo in cui vengono salvati i file di registro.                                                                                   |
-| `log_level`     | I livelli di registro utilizzati sono: INFO, ATTENZIONE, ERRORE e DEBUG. Vedere[Livelli di registro](#loglevels)                                             |
+| Collocamento    | Senso                                                                                                                                                          |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `time_zone`     | Indispensabile per una corretta tempistica delle operazioni in base alla propria posizione geografica.<br/>Formato come`Europe/Vienna`,`Europe/Amsterdam`, ... |
+| `log_file_path` | Imposta un percorso alternativo in cui vengono salvati i file di registro.                                                                                     |
+| `log_level`     | I livelli di registro utilizzati sono: INFO, ATTENZIONE, ERRORE e DEBUG. Vedere[Livelli di registro](#loglevels)                                               |
 
 ## Prezzi
 
@@ -70,28 +68,28 @@
 
 # Livelli di registro
 
-### ERRORE
+### `ERROR`
 
-Il livello di registro ERRORE indica condizioni di errore all'interno di un'applicazione che ostacolano l'esecuzione di un'operazione specifica. Sebbene l'applicazione possa continuare a funzionare a un livello ridotto di funzionalità o prestazioni,<br/>I registri ERRORI indicano problemi che dovrebbero essere esaminati tempestivamente.
+IL`ERROR`il livello di log indica condizioni di errore all'interno di un'applicazione che ostacolano l'esecuzione di un'operazione specifica. Sebbene l'applicazione possa continuare a funzionare a un livello ridotto di funzionalità o prestazioni,<br/>`ERROR`i log indicano problemi che dovrebbero essere esaminati tempestivamente.
 
-### AVVISARE
+### `WARN`
 
-Gli eventi registrati al livello WARN in genere indicano che si è verificato qualcosa di inaspettato
+Eventi registrati su`WARN`il livello in genere indica che è successo qualcosa di inaspettato
 si è verificato, ma per il momento l'applicazione può continuare a funzionare normalmente.
 Viene anche utilizzato per indicare condizioni che dovrebbero essere prontamente affrontate prima di esse
 degenerare in problemi per l'applicazione.
 
-### INFORMAZIONI
+### `INFO`
 
-Il livello INFO cattura gli eventi del sistema che sono significativi per il
+IL`INFO`Il livello cattura gli eventi nel sistema che sono significativi per il
 scopo commerciale dell'applicazione. Tali eventi vengono registrati per dimostrare che il sistema lo è
 funzionando normalmente. I sistemi di produzione in genere impostano per impostazione predefinita la registrazione a questo livello
 in modo che un riepilogo del normale comportamento dell'applicazione sia visibile a chiunque
  esaminando i registri.
 
-### DEBUG
+### `DEBUG`
 
-Il livello DEBUG viene utilizzato per registrare messaggi che aiutano gli sviluppatori nell'identificazione
+IL`DEBUG`level viene utilizzato per registrare messaggi che aiutano gli sviluppatori nell'identificazione
 problemi durante una sessione di debug. Il contenuto dei messaggi registrati nel DEBUG
 il livello varierà a seconda dell'applicazione, ma in genere contengono
 informazioni dettagliate che aiutano i suoi sviluppatori nella risoluzione dei problemi
