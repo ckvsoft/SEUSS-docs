@@ -1,4 +1,4 @@
-[tchèque](README.cs.md)-[danois](README.da.md)-[Allemand](README.de.md)-[Anglais](README.md)-[Espagnol](README.es.md)-[estonien](README.et.md)-[finlandais](README.fi.md)-[Français](README.fr.md)-[grec](README.el.md)-[italien](README.it.md)-[Néerlandais](README.nl.md)-[norvégien](README.no.md)-[polonais](README.pl.md)-[Portugais](README.pt.md)-[suédois](README.sv.md)-[Japonais](README.ja.md)
+[tchèque](README.cs.md)-[danois](README.da.md)-[Allemand](README.de.md)-[Anglais](README.md)-[Espagnol](README.es.md) - [estonien](README.et.md)-[finlandais](README.fi.md)-[Français](README.fr.md)-[grec](README.el.md)-[italien](README.it.md)-[Néerlandais](README.nl.md)-[norvégien](README.no.md)-[polonais](README.pl.md)-[Portuguese ](README.pt.md)-[suédois](README.sv.md)-[Japonais](README.ja.md)
 
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
@@ -6,7 +6,9 @@
 
 #### [SEUSS -> Commutateur de marché spot pour unité Smart Ess]
 
-# Configuration
+\#Test
+
+# Paramètres
 
 ## Général
 
@@ -22,7 +24,7 @@
 | ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `use_second_day`                           | activer/désactiver la comparaison des prix d'aujourd'hui et de demain s'ils deviennent disponibles<br/>Remarque : Si vous l'activez et que les prix diminuent sur plusieurs jours, il est possible qu'il n'y ait pas de facturation ni de changement pendant plusieurs jours jusqu'à ce que les prix les plus bas soient atteints. |
 | `number_of_lowest_prices_for_charging`     | the number of cheapest prices at which loading should/may be made                                                                                                                                                                                                                                                                  |
-| `number_of_highest_prices_for_discharging` | the number of the most expensive prices at which discharging should/may be carried out                                                                                                                                                                                                                                             |
+| `number_of_highest_prices_for_discharging` | le nombre de prix les plus élevés auxquels la décharge devrait/peut être effectuée                                                                                                                                                                                                                                                 |
 | `charging_price_limit`                     | la recharge est toujours activée en dessous de ce prix<br/>le nombre de prix les plus élevés auxquels la décharge devrait/peut être effectuée                                                                                                                                                                                      |
 
 ## Unités ESS
@@ -54,7 +56,7 @@
 | `api_token`  | Comment obtenir le jeton de sécurité API gratuit :<br/>1. Allez à<https://transparency.entsoe.eu/>--> inscrivez-vous et créez un compte<br/>2. Envoyez un e-mail à[transparency@entsoe.eu](mailto:transparency@entsoe.eu)avec « Accès API Restful » dans la ligne d'objet<br/>3. Le Helpdesk ENTSO-E répondra à votre demande dans un délai de 3 jours ouvrables.<br/>4. Générez un jeton de sécurité sur<https://transparency.entsoe.eu/usrm/user/myAccountSettings> |
 | `in_domain`  | Pour connaître votre clé de domaine d'entrée et de sortie, accédez à :<br/><https://www.entsoe.eu/data/energy-identification-codes-eic/eic-area-codes-map/>                                                                                                                                                                                                                                                                                                           |
 | `out_domain` | comme in_domain                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| `primary`    | Si ce marché est activé, ce point le définit comme marché primaire                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `primary`    | If this market is enabled this point sets it as the primary market                                                                                                                                                                                                                                                                                                                                                                                                    |
 | `enabled`    | définir votre marché comme activé/désactivé                                                                                                                                                                                                                                                                                                                                                                                                                           |
 
 ### Tiber
@@ -83,11 +85,11 @@ dégénérer en problèmes pour l’application.
 
 ### INFO
 
-Le niveau INFO capture les événements du système qui sont importants pour le
-l'objectif commercial de l'application. De tels événements sont enregistrés pour montrer que le système est
-fonctionnant normalement. Les systèmes de production enregistrent généralement par défaut à ce niveau
-afin qu'un résumé du comportement normal de l'application soit visible par tous
- examiner les journaux.
+The INFO level captures events in the system that are significant to the
+application's business purpose. Such events are logged to show that the system is
+operating normally. Production systems typically default to logging at this level
+so that a summary of the application's normal behavior is visible to anyone
+ reviewing the logs.
 
 ### DÉBOGUER
 
