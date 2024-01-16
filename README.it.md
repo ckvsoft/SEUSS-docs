@@ -6,8 +6,6 @@
 
 #### [SEUSS -> Commutatore spotmarket unità Smart Ess]
 
-\#Test
-
 # Impostazioni
 
 ## Generale
@@ -34,7 +32,7 @@
 | Collocamento | Senso                                                                                                                                                                                    |
 | :----------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `use_vrm`    | Se questo punto è abilitato (vero), viene effettuato un tentativo di connessione al Victron tramite il portale VRM.<br/>Ciò richiede un utente/password nel portale VRM                  |
-| `ip_address` | L'indirizzo IP locale del Victron.<br/>Ciò è necessario se "use_vrm" è disabilitato (falso).<br/>Otherwise this field remains empty                                                      |
+| `ip_address` | L'indirizzo IP locale del Victron.<br/>Ciò è necessario se "use_vrm" è disabilitato (falso).<br/>Altrimenti questo campo rimane vuoto                                                    |
 | `unit_id`    | ID del portale VRM<br/>è disponibile in Impostazioni/Portale online VRM/ID portale VRM.<br/>Nota: questo ID è necessario per accedere al Victron anche se non si utilizza un portale VRM |
 | `user`       | indirizzo e-mail utilizzato per connettersi al portale VRM                                                                                                                               |
 | `password`   | password utilizzata per connettersi al portale VRM                                                                                                                                       |
@@ -61,12 +59,12 @@
 
 ### Tibber
 
-| Collocamento | Senso                                                                                                                                                                                                                                                                                                                                             |
-| :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `api_token`  | To get the tibber_api_key:<br/>1. accedi con un account Tibber gratuito o cliente su<https://developer.tibber.com/settings/access-token><br/>2. Crea un token selezionando gli ambiti di cui hai bisogno (seleziona "prezzo")<br/>3. Usa questo link per creare un account gratuito con il tuo smartphone:<https://tibber.com/de/invite/ojgfbx2e> |
-| `price_unit` | Impostato:<br/>"energia" per utilizzare i prezzi del mercato spot (predefinito),<br/>"totale" per utilizzare i prezzi totali, comprese tasse e commissioni,<br/>"tassa" per utilizzare solo le tasse e le commissioni                                                                                                                             |
-| `primary`    | Se questo mercato è abilitato, questo punto lo imposta come mercato primario                                                                                                                                                                                                                                                                      |
-| `enabled`    | imposta il tuo mercato come abilitato/disabilitato                                                                                                                                                                                                                                                                                                |
+| Collocamento | Senso                                                                                                                                                                                                                                                                                                                                               |
+| :----------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `api_token`  | Per ottenere tibber_api_key:<br/>1. accedi con un account Tibber gratuito o cliente su<https://developer.tibber.com/settings/access-token><br/>2. Crea un token selezionando gli ambiti di cui hai bisogno (seleziona "prezzo")<br/>3. Usa questo link per creare un account gratuito con il tuo smartphone:<https://tibber.com/de/invite/ojgfbx2e> |
+| `price_unit` | Impostato:<br/>"energia" per utilizzare i prezzi del mercato spot (predefinito),<br/>"totale" per utilizzare i prezzi totali, comprese tasse e commissioni,<br/>"tassa" per utilizzare solo le tasse e le commissioni                                                                                                                               |
+| `primary`    | Se questo mercato è abilitato, questo punto lo imposta come mercato primario                                                                                                                                                                                                                                                                        |
+| `enabled`    | imposta il tuo mercato come abilitato/disabilitato                                                                                                                                                                                                                                                                                                  |
 
 * * *
 
