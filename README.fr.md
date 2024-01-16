@@ -1,5 +1,3 @@
-[tchèque](README.cs.md)-[danois](README.da.md)-[Allemand](README.de.md)-[Anglais](README.md)-[Espagnol](README.es.md)-[estonien](README.et.md)-[finlandais](README.fi.md)-[Français](README.fr.md)-[grec](README.el.md)-[italien](README.it.md)-[Néerlandais](README.nl.md)-[norvégien](README.no.md)-[polonais](README.pl.md)-[Portugais](README.pt.md)-[suédois](README.sv.md)-[Japonais](README.ja.md)
-
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
 # SEUSS
@@ -10,11 +8,11 @@
 
 ## Général
 
-| Paramètre       | Signification                                                                                                                                          |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `time_zone`     | Indispensable pour un timing correct des opérations en fonction de votre situation géographique.<br/>Format comme Europe/Vienne, Europe/Amsterdam, ... |
-| `log_file_path` | Définit un chemin alternatif dans lequel les fichiers journaux sont enregistrés.                                                                       |
-| `log_level`     | Les niveaux de journalisation utilisés sont : INFO, AVERTISSEMENT, ERREUR et DEBUG. voir[Niveaux de journalisation](#loglevels)                        |
+| Paramètre       | Signification                                                                                                                                              |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `time_zone`     | Indispensable pour un timing correct des opérations en fonction de votre situation géographique.<br/>Formater comme`Europe/Vienna`,`Europe/Amsterdam`, ... |
+| `log_file_path` | Définit un chemin alternatif dans lequel les fichiers journaux sont enregistrés.                                                                           |
+| `log_level`     | Les niveaux de journalisation utilisés sont : INFO, AVERTISSEMENT, ERREUR et DEBUG. voir[Niveaux de journalisation](#loglevels)                            |
 
 ## Des prix
 
@@ -41,7 +39,7 @@
 
 ### répondre
 
-| Paramètre | Meaning                                                            |
+| Paramètre | Signification                                                      |
 | :-------- | :----------------------------------------------------------------- |
 | `country` | Choisissez l'emplacement AT ou DE                                  |
 | `primary` | Si ce marché est activé, ce point le définit comme marché primaire |
@@ -70,28 +68,28 @@
 
 # Niveaux de journalisation
 
-### ERREUR
+### `ERROR`
 
-Le niveau de journalisation ERROR indique les conditions d'erreur au sein d'une application qui entravent l'exécution d'une opération spécifique. Même si l'application peut continuer à fonctionner avec un niveau de fonctionnalité ou de performances réduit,<br/>Les journaux d'ERREURS signifient des problèmes qui doivent être étudiés rapidement.
+Le`ERROR`Le niveau de journalisation indique les conditions d'erreur au sein d'une application qui entravent l'exécution d'une opération spécifique. Bien que l'application puisse continuer à fonctionner avec un niveau de fonctionnalité ou de performances réduit,<br/>`ERROR`les journaux signifient des problèmes qui doivent être étudiés rapidement.
 
-### AVERTIR
+### `WARN`
 
-Les événements enregistrés au niveau WARN indiquent généralement que quelque chose d'inattendu s'est produit.
+Événements enregistrés au`WARN`Le niveau indique généralement que quelque chose d'inattendu s'est produit.
 s'est produit, mais l'application peut continuer à fonctionner normalement pour le moment.
 Il est également utilisé pour signifier des conditions qui doivent être rapidement traitées avant d'être
 dégénérer en problèmes pour l’application.
 
-### INFO
+### `INFO`
 
-Le niveau INFO capture les événements du système qui sont importants pour le
+Le`INFO`Le niveau capture les événements dans le système qui sont importants pour le
 l'objectif commercial de l'application. De tels événements sont enregistrés pour montrer que le système est
 fonctionnant normalement. Les systèmes de production enregistrent généralement par défaut à ce niveau
 afin qu'un résumé du comportement normal de l'application soit visible par tous
  examiner les journaux.
 
-### DÉBOGUER
+### `DEBUG`
 
-Le niveau DEBUG est utilisé pour enregistrer les messages qui aident les développeurs à identifier
+Le`DEBUG`Le niveau est utilisé pour enregistrer les messages qui aident les développeurs à identifier
 problèmes lors d’une session de débogage. Le contenu des messages enregistrés au DEBUG
 Le niveau varie en fonction de votre application, mais ils contiennent généralement
 des informations détaillées qui aident ses développeurs à résoudre les problèmes
