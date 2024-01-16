@@ -1,5 +1,3 @@
-[tjeckiska](README.cs.md)-[danska](README.da.md)-[tysk](README.de.md)-[engelsk](README.md)-[spanska](README.es.md)-[estniska](README.et.md)-[finska](README.fi.md)-[franska](README.fr.md)-[grekisk](README.el.md)-[italienska](README.it.md)-[holländska](README.nl.md)-[norska](README.no.md)-[putsa](README.pl.md)-[portugisiska](README.pt.md)-[Svenska](README.sv.md)-[japanska](README.ja.md)
-
 ![Logo](views/static/images/logo-seuss.png?raw=true "SEUSS")
 
 # SEUSS
@@ -10,20 +8,20 @@
 
 ## Allmän
 
-| Miljö           | Menande                                                                                                                       |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `time_zone`     | Viktigt för korrekt timing av operationer baserat på din geografiska plats.<br/>Format som Europa/Wien, Europa/Amsterdam, ... |
-| `log_file_path` | Ställer in en alternativ sökväg till vilken loggfilerna sparas.                                                               |
-| `log_level`     | Använda Loglevel är: INFO, VARNING, ERROR och DEBUG. ser[Logga nivåer](#loglevels)                                            |
+| Miljö           | Menande                                                                                                                              |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `time_zone`     | Viktigt för korrekt timing av operationer baserat på din geografiska plats.<br/>Formatera som`Europe/Vienna`,`Europe/Amsterdam`, ... |
+| `log_file_path` | Ställer in en alternativ sökväg till vilken loggfilerna sparas.                                                                      |
+| `log_level`     | Använda Loglevel är: INFO, VARNING, ERROR och DEBUG. ser[Logga nivåer](#loglevels)                                                   |
 
 ## Priser
 
-| Miljö                                      | Menande                                                                                                                                                                                                                                                                      |
-| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `use_second_day`                           | aktivera/inaktivera för att jämföra dagens och morgondagens priser om de blir tillgängliga<br/>Obs: Om du aktiverar detta och priserna sjunker under flera dagar, är det möjligt att det inte blir någon laddning eller byte på flera dagar tills de lägsta priserna uppnås. |
-| `number_of_lowest_prices_for_charging`     | antalet billigaste priser till vilka lastning bör/får ske                                                                                                                                                                                                                    |
-| `number_of_highest_prices_for_discharging` | antalet dyraste priser till vilka lossning bör/får ske                                                                                                                                                                                                                       |
-| `charging_price_limit`                     | laddning är alltid aktiverad under detta pris<br/>antalet dyraste priser till vilka lossning bör/får ske                                                                                                                                                                     |
+| Miljö                                      | Menande                                                                                                                                                                                                                                                        |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `use_second_day`                           | enable/disable to compare today and tomorrow prices if they become available<br/>Obs: Om du aktiverar detta och priserna sjunker under flera dagar, är det möjligt att det inte blir någon laddning eller byte på flera dagar tills de lägsta priserna uppnås. |
+| `number_of_lowest_prices_for_charging`     | antalet billigaste priser till vilka lastning bör/får ske                                                                                                                                                                                                      |
+| `number_of_highest_prices_for_discharging` | antalet dyraste priser till vilka lossning bör/får ske                                                                                                                                                                                                         |
+| `charging_price_limit`                     | laddning är alltid aktiverad under detta pris<br/>antalet dyraste priser till vilka lossning bör/får ske                                                                                                                                                       |
 
 ## ESS-enheter
 
@@ -34,7 +32,7 @@
 | `use_vrm`    | Om denna punkt är aktiverad (true) görs ett försök att ansluta till Victron via VRM-portalen.<br/>Detta kräver en användare/lösenord i VRM-portalen                 |
 | `ip_address` | Den lokala IP-adressen för Victron.<br/>Detta krävs om "use_vrm" är inaktiverat (false).<br/>Annars förblir detta fält tomt                                         |
 | `unit_id`    | VRM Portal ID<br/>finns i Inställningar / VRM onlineportal / VRM Portal Id.<br/>Obs: Detta ID krävs för att komma åt Victron även om du inte använder en VRM-portal |
-| `user`       | e-postadress som du använder för att ansluta till VRM-portalen                                                                                                      |
+| `user`       | e-postadress du använder för att ansluta till VRM-portalen                                                                                                          |
 | `password`   | lösenord som du använder för att ansluta till VRM-portalen                                                                                                          |
 
 ## Marknader
@@ -70,28 +68,28 @@
 
 # Loggnivåer
 
-### FEL
+### `ERROR`
 
-ERROR-loggnivån indikerar feltillstånd inom en applikation som hindrar exekvering av en specifik operation. Även om applikationen kan fortsätta att fungera med en reducerad funktionalitet eller prestanda,<br/>FELloggar betyder problem som bör undersökas omgående.
+De`ERROR`loggnivå indikerar feltillstånd inom en applikation som hindrar exekvering av en specifik operation. Även om applikationen kan fortsätta att fungera med en reducerad funktionalitet eller prestanda,<br/>`ERROR`loggar anger problem som bör undersökas omgående.
 
-### VARNA
+### `WARN`
 
-Händelser som loggas på WARN-nivå indikerar vanligtvis att något oväntat har gjort det
+Händelser loggade på`WARN`nivå indikerar vanligtvis att något oväntat har
 inträffade, men applikationen kan fortsätta att fungera normalt tills vidare.
 Det används också för att beteckna villkor som bör åtgärdas omgående innan de
 eskalera till problem för applikationen.
 
-### INFO
+### `INFO`
 
-INFO-nivån fångar upp händelser i systemet som är viktiga för
+De`INFO`nivå fångar upp händelser i systemet som är viktiga för
 applikationens affärsändamål. Sådana händelser loggas för att visa att systemet är det
 fungerar normalt. Produktionssystem loggar vanligtvis som standard på denna nivå
 så att en sammanfattning av programmets normala beteende är synlig för alla
  granska loggarna.
 
-### DEBUGA
+### `DEBUG`
 
-DEBUG-nivån används för att logga meddelanden som hjälper utvecklare att identifiera
+De`DEBUG`nivå används för att logga meddelanden som hjälper utvecklare att identifiera
 problem under en felsökningssession. Innehållet i meddelandena som loggas vid DEBUG
 nivå kommer att variera beroende på din applikation, men de innehåller vanligtvis
 detaljerad information som hjälper sina utvecklare att felsöka problem
