@@ -88,21 +88,21 @@ Después`SEUSS`se ha instalado correctamente, hay un sitio web disponible en la 
 -   ![Logo](views/static/images/configeditor_panels.png?raw=true "SEUSS Config Editor")
 
 Estos también se pueden encontrar en la descripción de Configuración.
-Para aquellos que prefieren trabajar en un archivo de configuración, existe config.toml
+Para aquellos que prefieren trabajar en un archivo de configuración, existe config.json
 
 # Ajustes
 
 ## General
 
-| Configuración   | Significado                                                                                                                                          |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `time_zone`     | Esencial para la sincronización correcta de las operaciones según su ubicación geográfica.<br/>Formatear como`Europe/Vienna`,`Europe/Amsterdam`, ... |
-| `log_file_path` | Establece una ruta alternativa en la que se guardan los archivos de registro.                                                                        |
-| `log_level`     | Los niveles de registro utilizados son:`INFO`,`WARNING`,`ERROR`y`DEBUG`. ver[Niveles de registro](#loglevels)                                        |
+| Configuración   | Significado                                                                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `time_zone`     | Esencial para la sincronización correcta de las operaciones según su ubicación geográfica.<br/>Formato como`Europe/Vienna`,`Europe/Amsterdam`, ... |
+| `log_file_path` | Establece una ruta alternativa en la que se guardan los archivos de registro.                                                                      |
+| `log_level`     | Los niveles de registro utilizados son:`INFO`,`WARNING`,`ERROR`y`DEBUG`. ver[Niveles de registro](#loglevels)                                      |
 
 ## Precios
 
-#### Cambie los precios (use siempre Cent/kWh, sin importar si está usando Awattar (que muestra Cent/kWh) o Entsoe API (que muestra EUR/MWh) / precios netos sin impuestos).
+#### Cambie los precios (use siempre Cent/kWh, sin importar si está utilizando Awattar (que muestra Cent/kWh) o Entsoe API (que muestra EUR/MWh) / precios netos sin impuestos).
 
 | Configuración                              | Significado                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -123,12 +123,12 @@ Para aquellos que prefieren trabajar en un archivo de configuración, existe con
 | `user`                | dirección de correo electrónico que utiliza para conectarse al portal VRM                                                                                                                                                                                                                                                                                                                                                                                  |
 | `password`            | contraseña que utiliza para conectarse al portal VRM                                                                                                                                                                                                                                                                                                                                                                                                       |
 | `max_discharge_power` | Predeterminado: -1<br/>Si utiliza`Limit inverter power`en el menú ESS entonces este valor debe ingresarse aquí.<br/>Si el inversor está configurado en`Discharge false`por esta aplicación, este valor se sobrescribirá en el ESS.<br/>Este límite aquí se establece en el modo de descarga en el ESS.<br/>Si no se establece ningún límite, deje el valor en`-1`.<br/>Ejemplo: entrar`1000`limitar la descarga a`1000W`, Ingresar`-1`para máxima potencia |
-| `primary`             | Si este mercado está habilitado este punto lo establece como mercado primario.                                                                                                                                                                                                                                                                                                                                                                             |
+| `only_observation`    | Si`only observation`está activado el essunit sólo será utilizado con fines estadísticos. La essunit no ejecuta ninguna condición.                                                                                                                                                                                                                                                                                                                          |
 | `enabled`             | Para utilizar esta entrada debe ser`enabled`. De lo contrario`disabled`                                                                                                                                                                                                                                                                                                                                                                                    |
 
 ## Mercados al contado
 
-### respuesta
+### aWATTar
 
 | Configuración | Significado                                                                    |
 | :------------ | :----------------------------------------------------------------------------- |
@@ -157,14 +157,17 @@ Para aquellos que prefieren trabajar en un archivo de configuración, existe con
 
 ## Paneles fotovoltaicos
 
-| Configuración | Significado                                                                               |
-| :------------ | :---------------------------------------------------------------------------------------- |
-| `LocLat`      | Latitud                                                                                   |
-| `LocLon`      | Longitud                                                                                  |
-| `angle`       | Ángulo de sus paneles 0 (horizontal) … 90 (vertical)                                      |
-| `direction`   | Azimut del plano, -180 … 180 (-180 = norte, -90 = este, 0 = sur, 90 = oeste, 180 = norte) |
-| `totPower`    | Potencia de los módulos instalados en kilovatios.                                         |
-| `enabled`     | Para utilizar esta entrada debe ser`enabled`. De lo contrario`disabled`                   |
+| Configuración     | Significado                                                                                         |
+| :---------------- | :-------------------------------------------------------------------------------------------------- |
+| `locLat`          | Latitud                                                                                             |
+| `locLong`         | Longitud                                                                                            |
+| `angle`           | Ángulo de sus paneles 0 (horizontal) … 90 (vertical)                                                |
+| `direction`       | Azimut del plano, -180 … 180 (-180 = norte, -90 = este, 0 = sur, 90 = oeste, 180 = norte)           |
+| `totPower`        | Potencia de los módulos instalados en kilovatios.                                                   |
+| `total_area`      | Área total de los paneles en metros cuadrados.                                                      |
+| `damping_morning` | Con este parámetro puedes ajustar el resultado por la mañana. Valor flotante 0..1, predeterminado 0 |
+| `damping_evening` | Con este parámetro puedes ajustar el resultado por la noche. Valor flotante 0..1, predeterminado 0  |
+| `enabled`         | Para utilizar esta entrada debe ser`enabled`. De lo contrario`disabled`                             |
 
 * * *
 
