@@ -88,17 +88,17 @@ Efter`SEUSS`har installerats framgångsrikt finns en webbplats tillgänglig på 
 -   ![Logo](views/static/images/configeditor_panels.png?raw=true "SEUSS Config Editor")
 
 Dessa kan också hittas i beskrivningen av Inställningar.
-För de som föredrar att arbeta i en config-fil finns config.toml
+För de som föredrar att arbeta i en konfigurationsfil finns config.json
 
 # inställningar
 
 ## Allmän
 
-| Miljö           | Menande                                                                                                                              |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `time_zone`     | Viktigt för korrekt timing av operationer baserat på din geografiska plats.<br/>Formatera som`Europe/Vienna`,`Europe/Amsterdam`, ... |
-| `log_file_path` | Ställer in en alternativ sökväg till vilken loggfilerna sparas.                                                                      |
-| `log_level`     | Använda Loglevel är:`INFO`,`WARNING`,`ERROR`och`DEBUG`. ser[Logga nivåer](#loglevels)                                                |
+| Miljö           | Menande                                                                                                                           |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `time_zone`     | Viktigt för korrekt timing av operationer baserat på din geografiska plats.<br/>Format som`Europe/Vienna`,`Europe/Amsterdam`, ... |
+| `log_file_path` | Ställer in en alternativ sökväg till vilken loggfilerna sparas.                                                                   |
+| `log_level`     | Använda Loglevel är:`INFO`,`WARNING`,`ERROR`och`DEBUG`. ser[Logga nivåer](#loglevels)                                             |
 
 ## Priser
 
@@ -107,7 +107,7 @@ För de som föredrar att arbeta i en config-fil finns config.toml
 | Miljö                                      | Menande                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | ------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `use_second_day`                           | `enable/disable`för att jämföra dagens och morgondagens priser om de blir tillgängliga<br/>Obs: Om du aktiverar detta och priserna sjunker under flera dagar, är det möjligt att det inte blir någon laddning eller byte på flera dagar tills de lägsta priserna uppnås.                                                                                                                                                                                                                  |
-| `number_of_lowest_prices_for_charging`     | Två lägen kan användas här.<br/>läge 1:<br/>_antalet billigaste priser som laddning bör/får ske. Här anger du heltal<br/>läge 2:<br/>_Här bestäms antalet priser utifrån medelpriset. För detta läge anger du decimaltal. T.ex. 0,85 för att få alla priser som ligger 85 % under genomsnittet. Det som är relevant här är specifikationen av ett kommavärde. Med 1.0 antas det att 100% av det genomsnittliga priset tas (ger ingen mening) men om 1 anges är det 1 billigaste pris      |
+| `number_of_lowest_prices_for_charging`     | Två lägen kan användas här.<br/>läge 1:<br/>_antalet billigaste priser som laddning bör/får ske. Här anger du heltal<br/>läge 2:<br/>_Här bestäms antalet priser utifrån medelpriset. För detta läge anger du decimaltal. T.ex. 0,85 för att få alla priser som ligger 85 % under genomsnittet. Det som är relevant här är specifikationen av ett kommavärde. Med 1.0 antas det att 100% av det genomsnittliga priset tas (inte meningsfullt) men om 1 anges är det 1 billigaste pris     |
 | `number_of_highest_prices_for_discharging` | Två lägen kan användas här.<br/>läge 1:<br/>_antalet dyraste priser till vilka lossning bör/får ske. Här anger du heltal<br/>läge 2:<br/>_Här bestäms antalet priser utifrån medelpriset. För detta läge anger du decimaltal. T.ex. 1,25 för att få alla priser som ligger 25 % över genomsnittet.<br/>Det som är relevant här är specifikationen av ett kommavärde. Med 1.0 antas det att 100 % av det genomsnittliga priset tas (ger ingen mening) men om 1 anges är det 1 dyraste pris |
 | `charging_price_limit`                     | laddning är alltid aktiverad under detta pris<br/>antalet dyraste priser till vilka lossning bör/får ske                                                                                                                                                                                                                                                                                                                                                                                  |
 
@@ -117,13 +117,13 @@ För de som föredrar att arbeta i en config-fil finns config.toml
 
 | Miljö                 | Menande                                                                                                                                                                                                                                                                                                                                                                                                               |
 | :-------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `use_vrm`             | Om denna punkt är aktiverad (sant) görs ett försök att ansluta till Victron via VRM-portalen.<br/>Detta kräver en användare/lösenord i VRM-portalen                                                                                                                                                                                                                                                                   |
+| `use_vrm`             | Om denna punkt är aktiverad (true) görs ett försök att ansluta till Victron via VRM-portalen.<br/>Detta kräver en användare/lösenord i VRM-portalen                                                                                                                                                                                                                                                                   |
 | `ip_address`          | Den lokala IP-adressen för Victron.<br/>Detta krävs om`use_vrm`är inaktiverad (falskt).<br/>Annars förblir detta fält tomt                                                                                                                                                                                                                                                                                            |
 | `unit_id`             | VRM Portal ID<br/>finns i`Settings / VRM online portal / VRM Portal Id`.<br/>Obs: Detta ID krävs för att komma åt Victron även om du inte använder en VRM-portal                                                                                                                                                                                                                                                      |
 | `user`                | e-postadress som du använder för att ansluta till VRM-portalen                                                                                                                                                                                                                                                                                                                                                        |
 | `password`            | lösenord som du använder för att ansluta till VRM-portalen                                                                                                                                                                                                                                                                                                                                                            |
 | `max_discharge_power` | Standard: -1<br/>Om du använder`Limit inverter power`i ESS-menyn måste detta värde anges här.<br/>Om växelriktaren är inställd på`Discharge false`av den här appen kommer detta värde att skrivas över i ESS.<br/>Denna gräns här är inställd i urladdningsläge i ESS.<br/>Om ingen gräns är inställd lämnar du värdet på`-1`.<br/>Exempel: Enter`1000`att begränsa utsläppet till`1000W`, Stiga på`-1`för full kraft |
-| `primary`             | Om denna marknad är aktiverad anger denna punkt den som den primära marknaden                                                                                                                                                                                                                                                                                                                                         |
+| `only_observation`    | Om`only observation`är aktiverad kommer essenheten endast att användas för statistiska ändamål. Studieenheten utför inga villkor                                                                                                                                                                                                                                                                                      |
 | `enabled`             | För att kunna använda den här posten måste den vara det`enabled`. Annat`disabled`                                                                                                                                                                                                                                                                                                                                     |
 
 ## Spotmarknader
@@ -157,14 +157,17 @@ För de som föredrar att arbeta i en config-fil finns config.toml
 
 ## PV paneler
 
-| Miljö       | Menande                                                                              |
-| :---------- | :----------------------------------------------------------------------------------- |
-| `LocLat`    | Latitud                                                                              |
-| `LocLon`    | Longitud                                                                             |
-| `angle`     | Vinkeln på dina paneler 0 (horisontell) … 90 (vertikal)                              |
-| `direction` | Plan azimut, -180 … 180 (-180 = norr, -90 = öst, 0 = söder, 90 = väster, 180 = norr) |
-| `totPower`  | installerade moduler effekt i kilowatt                                               |
-| `enabled`   | För att kunna använda den här posten måste den vara det`enabled`. Annat`disabled`    |
+| Miljö             | Menande                                                                                        |
+| :---------------- | :--------------------------------------------------------------------------------------------- |
+| `locLat`          | Latitud                                                                                        |
+| `locLong`         | Longitud                                                                                       |
+| `angle`           | Vinkeln på dina paneler 0 (horisontell) … 90 (vertikal)                                        |
+| `direction`       | Plan azimut, -180 … 180 (-180 = norr, -90 = öst, 0 = söder, 90 = väster, 180 = norr)           |
+| `totPower`        | installerade moduler effekt i kilowatt                                                         |
+| `total_area`      | Panelernas totala yta i kvadratmeter                                                           |
+| `damping_morning` | Med denna parameter kan du justera resultatet på morgonen. Värdeflytande 0..1, standardvärde 0 |
+| `damping_evening` | Med denna parameter kan du justera resultatet på kvällen. Värdeflytande 0..1, standardvärde 0  |
+| `enabled`         | För att kunna använda den här posten måste den vara det`enabled`. Annat`disabled`              |
 
 * * *
 
@@ -192,7 +195,7 @@ så att en sammanfattning av programmets normala beteende är synlig för alla
 ### `DEBUG`
 
 De`DEBUG`nivå används för att logga meddelanden som hjälper utvecklare att identifiera
-problem under en felsökningssession. Innehållet i meddelanden som loggas vid DEBUG
+problem under en felsökningssession. Innehållet i meddelandena som loggas vid DEBUG
 nivå kommer att variera beroende på din applikation, men de innehåller vanligtvis
 detaljerad information som hjälper sina utvecklare att felsöka problem
 effektivt. Detta kan inkludera variablers tillstånd inom det omgivande omfånget eller
