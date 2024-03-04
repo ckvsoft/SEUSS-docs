@@ -37,7 +37,7 @@ at denne applikation ikke skal køre direkte på VenusOS. Direkte styring med D-
 
 # Testet
 
-Denne version var vellykket med
+This version was successful with
 
 * * *
 
@@ -71,7 +71,7 @@ For at gøre filsystemet skrivbart skal du udføre følgende kommando, før du k
 
 Efter`SEUSS`er blevet installeret, er et websted tilgængeligt på IP-adressen og port 5000 på`Computer/VenusOS`hvor`SEUSS`blev installeret.
 
--   Du kan se eller downloade logfilen.
+-   You can view or download the log file.
 -   Desuden kan konfigurationen udføres ved hjælp af[Config Editor]menupunkt.
 -   Værktøjstip til de fleste punkter vises her.
 
@@ -88,7 +88,7 @@ Efter`SEUSS`er blevet installeret, er et websted tilgængeligt på IP-adressen o
 -   ![Logo](views/static/images/configeditor_panels.png?raw=true "SEUSS Config Editor")
 
 Disse kan også findes i indstillingsbeskrivelsen.
-For dem, der foretrækker at arbejde i en config-fil, er der config.toml
+For dem, der foretrækker at arbejde i en konfigurationsfil, er der config.json
 
 # Indstillinger
 
@@ -115,16 +115,16 @@ For dem, der foretrækker at arbejde i en config-fil, er der config.toml
 
 ### Victron
 
-| Indstilling           | Betyder                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| :-------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `use_vrm`             | Hvis dette punkt er aktiveret (sandt), gøres der et forsøg på at oprette forbindelse til Victron via VRM-portalen.<br/>Dette kræver en bruger/adgangskode i VRM-portalen                                                                                                                                                                                                                                                                 |
-| `ip_address`          | Den lokale IP-adresse på Victron.<br/>Dette er påkrævet hvis`use_vrm`er deaktiveret (falsk).<br/>Ellers forbliver dette felt tomt                                                                                                                                                                                                                                                                                                        |
-| `unit_id`             | VRM-portal-id<br/>kan findes i`Settings / VRM online portal / VRM Portal Id`.<br/>Bemærk: Dette ID er påkrævet for at få adgang til Victron, selvom du ikke bruger en VRM-portal                                                                                                                                                                                                                                                         |
-| `user`                | e-mailadresse, du bruger til at oprette forbindelse til VRM-portalen                                                                                                                                                                                                                                                                                                                                                                     |
-| `password`            | adgangskode, du bruger til at oprette forbindelse til VRM-portalen                                                                                                                                                                                                                                                                                                                                                                       |
-| `max_discharge_power` | Standard: -1<br/>Hvis du bruger`Limit inverter power`i ESS menuen så skal denne værdi indtastes her.<br/>Hvis inverteren er indstillet til`Discharge false`af denne app, vil denne værdi blive overskrevet i ESS.<br/>Denne grænse er her indstillet i afladningstilstand i ESS.<br/>Hvis der ikke er sat nogen grænse, så lad værdien stå på`-1`.<br/>Eksempel: Enter`1000`at begrænse udledningen til`1000W`, Gå ind`-1`for fuld kraft |
-| `primary`             | Hvis dette marked er aktiveret, angiver dette punkt det som det primære marked                                                                                                                                                                                                                                                                                                                                                           |
-| `enabled`             | For at bruge denne post skal den være`enabled`. Ellers`disabled`                                                                                                                                                                                                                                                                                                                                                                         |
+| Indstilling           | Betyder                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| :-------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `use_vrm`             | Hvis dette punkt er aktiveret (sandt), gøres der et forsøg på at oprette forbindelse til Victron via VRM-portalen.<br/>Dette kræver en bruger/adgangskode i VRM-portalen                                                                                                                                                                                                                                                                |
+| `ip_address`          | Den lokale IP-adresse på Victron.<br/>Dette er påkrævet hvis`use_vrm`er deaktiveret (falsk).<br/>Ellers forbliver dette felt tomt                                                                                                                                                                                                                                                                                                       |
+| `unit_id`             | VRM-portal-id<br/>kan findes i`Settings / VRM online portal / VRM Portal Id`.<br/>Bemærk: Dette ID er påkrævet for at få adgang til Victron, selvom du ikke bruger en VRM-portal                                                                                                                                                                                                                                                        |
+| `user`                | e-mailadresse, du bruger til at oprette forbindelse til VRM-portalen                                                                                                                                                                                                                                                                                                                                                                    |
+| `password`            | adgangskode, du bruger til at oprette forbindelse til VRM-portalen                                                                                                                                                                                                                                                                                                                                                                      |
+| `max_discharge_power` | Default: -1<br/>Hvis du bruger`Limit inverter power`i ESS menuen så skal denne værdi indtastes her.<br/>Hvis inverteren er indstillet til`Discharge false`af denne app, vil denne værdi blive overskrevet i ESS.<br/>Denne grænse er her indstillet i afladningstilstand i ESS.<br/>Hvis der ikke er sat nogen grænse, så lad værdien stå på`-1`.<br/>Eksempel: Enter`1000`at begrænse udledningen til`1000W`, Gå ind`-1`for fuld kraft |
+| `only_observation`    | Hvis`only observation`er aktiveret vil essunit kun blive brugt til statistiske formål. Essent-enheden udfører ingen betingelser                                                                                                                                                                                                                                                                                                         |
+| `enabled`             | For at bruge denne post skal den være`enabled`. Ellers`disabled`                                                                                                                                                                                                                                                                                                                                                                        |
 
 ## Spotmarkeder
 
@@ -157,14 +157,17 @@ For dem, der foretrækker at arbejde i en config-fil, er der config.toml
 
 ## PV paneler
 
-| Indstilling | Betyder                                                                           |
-| :---------- | :-------------------------------------------------------------------------------- |
-| `LocLat`    | Breddegrad                                                                        |
-| `LocLon`    | Længde                                                                            |
-| `angle`     | Vinkel på dine paneler 0 (vandret) … 90 (lodret)                                  |
-| `direction` | Plan azimuth, -180 … 180 (-180 = nord, -90 = øst, 0 = syd, 90 = vest, 180 = nord) |
-| `totPower`  | installerede modulers effekt i kilowatt                                           |
-| `enabled`   | For at bruge denne post skal den være`enabled`. Ellers`disabled`                  |
+| Indstilling       | Betyder                                                                                 |
+| :---------------- | :-------------------------------------------------------------------------------------- |
+| `locLat`          | Breddegrad                                                                              |
+| `locLong`         | Længde                                                                                  |
+| `angle`           | Vinkel på dine paneler 0 (vandret) … 90 (lodret)                                        |
+| `direction`       | Plan azimut, -180 … 180 (-180 = nord, -90 = øst, 0 = syd, 90 = vest, 180 = nord)        |
+| `totPower`        | installerede modulers effekt i kilowatt                                                 |
+| `total_area`      | Samlet areal af panelerne i kvadratmeter                                                |
+| `damping_morning` | Med denne parameter kan du justere resultatet om morgenen. Værdi float 0..1, standard 0 |
+| `damping_evening` | Med denne parameter kan du justere resultatet om aftenen. Værdi float 0..1, standard 0  |
+| `enabled`         | For at bruge denne post skal den være`enabled`. Ellers`disabled`                        |
 
 * * *
 
@@ -177,7 +180,7 @@ Det`ERROR`log-niveau angiver fejltilstande i en applikation, der hindrer udføre
 ### `WARN`
 
 Begivenheder logget på`WARN`niveau indikerer typisk, at noget uventet har
-sket, men applikationen kan indtil videre fortsætte med at fungere normalt.
+opstod, men applikationen kan fortsætte med at fungere normalt indtil videre.
 Det bruges også til at markere forhold, der skal behandles omgående, før de
 eskalere til problemer for applikationen.
 
@@ -191,8 +194,8 @@ så en oversigt over applikationens normale adfærd er synlig for enhver
 
 ### `DEBUG`
 
-Det`DEBUG`niveau bruges til at logge beskeder, som hjælper udviklere med at identificere
-problemer under en fejlretningssession. Indholdet af meddelelserne logget på DEBUG
+Det`DEBUG`niveau bruges til at logge beskeder, der hjælper udviklere med at identificere
+problemer under en fejlretningssession. Indholdet af de meddelelser, der er logget på DEBUG
 niveau vil variere afhængigt af din ansøgning, men de indeholder typisk
 detaljerede oplysninger, der hjælper udviklerne med fejlfinding af problemer
 effektivt. Dette kan omfatte variables tilstand inden for det omgivende område eller
