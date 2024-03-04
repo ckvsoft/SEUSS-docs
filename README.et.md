@@ -88,7 +88,7 @@ Pärast`SEUSS`on edukalt installitud, on veebisait saadaval IP-aadressil ja pord
 -   ![Logo](views/static/images/configeditor_panels.png?raw=true "SEUSS Config Editor")
 
 Need leiate ka seadete kirjeldusest.
-Neile, kes eelistavad töötada konfiguratsioonifailis, on olemas config.toml
+Neile, kes eelistavad töötada konfiguratsioonifailis, on olemas config.json
 
 # Seaded
 
@@ -109,7 +109,7 @@ Neile, kes eelistavad töötada konfiguratsioonifailis, on olemas config.toml
 | `use_second_day`                           | `enable/disable`võrrelda tänaseid ja homseid hindu, kui need saadavale tulevad<br/>Märkus: Kui aktiveerite selle ja hinnad langevad mitme päeva jooksul, on võimalik, et mitu päeva ei võeta tasu ega lülituta kuni madalaimate hindadeni.                                                                                                                                                                                                                                                              |
 | `number_of_lowest_prices_for_charging`     | Siin saab kasutada kahte režiimi.<br/>režiim1:<br/>_odavaimate hindade arv, millega laadimine peaks/võib toimuda. Siin sisestate täisarvud<br/>režiim2:<br/>_Siin määratakse hindade arv keskmise hinna alusel. Selle režiimi jaoks sisestate kümnendarvud. Nt. 0,85, et saada kõik hinnad, mis on 85% keskmisest madalamad. Siin on asjakohane koma väärtuse täpsustamine. 1.0 puhul eeldatakse, et võetakse 100% keskmisest hinnast (pole mõtet) aga kui sisestada 1 on 1 odavaim hind                |
 | `number_of_highest_prices_for_discharging` | Siin saab kasutada kahte režiimi.<br/>režiim1:<br/>_kõige kallimate hindade arv, millega tühjendamine peaks/võib toimuda. Siin sisestate täisarvud<br/>režiim2:<br/>_Siin määratakse hindade arv keskmise hinna alusel. Selle režiimi jaoks sisestate kümnendarvud. Nt. 1.25, et saada kõik hinnad, mis on 25% keskmisest kõrgemad.<br/>Siin on asjakohane komaväärtuse täpsustamine. 1.0 puhul eeldatakse, et võetakse 100% keskmisest hinnast (pole mõtet) aga kui 1 sisestada on 1 kõige kallim hind |
-| `charging_price_limit`                     | laadimine on alati lubatud alla selle hinna<br/> the number of the most expensive prices at which discharging should/may be carried out                                                                                                                                                                                                                                                                                                                                                                 |
+| `charging_price_limit`                     | laadimine on alati lubatud alla selle hinna<br/>kõige kallimate hindade arv, millega tühjendamine peaks/võib toimuda                                                                                                                                                                                                                                                                                                                                                                                    |
 
 ## ESS üksused
 
@@ -123,7 +123,7 @@ Neile, kes eelistavad töötada konfiguratsioonifailis, on olemas config.toml
 | `user`                | meiliaadress, mida kasutate VRM-i portaaliga ühenduse loomiseks                                                                                                                                                                                                                                                                                                                                                         |
 | `password`            | parool, mida kasutate VRM-i portaaliga ühenduse loomiseks                                                                                                                                                                                                                                                                                                                                                               |
 | `max_discharge_power` | Vaikimisi: -1<br/>Kui kasutate`Limit inverter power`ESS menüüs siis tuleb see väärtus siia sisestada.<br/>Kui inverter on seatud`Discharge false`selle rakendusega kirjutatakse see väärtus ESS-is üle.<br/>See piirang on siin seatud ESS-i tühjendusrežiimis.<br/>Kui piirangut pole määratud, jätke väärtus väärtusele`-1`.<br/>Näide: sisestage`1000`tühjenemise piiramiseks`1000W`, Sisenema`-1`täisvõimsuse jaoks |
-| `primary`             | Kui see turg on lubatud, määrab see punkt selle esmaseks turuks                                                                                                                                                                                                                                                                                                                                                         |
+| `only_observation`    | Kui`only observation`on aktiveeritud, kasutatakse essuniti ainult statistilistel eesmärkidel. Essunit ei täida mingeid tingimusi                                                                                                                                                                                                                                                                                        |
 | `enabled`             | Selle kirje kasutamiseks peab see olema`enabled`. Muidu`disabled`                                                                                                                                                                                                                                                                                                                                                       |
 
 ## Kohalikud turud
@@ -157,14 +157,17 @@ Neile, kes eelistavad töötada konfiguratsioonifailis, on olemas config.toml
 
 ## PV paneelid
 
-| Seadistamine | Tähendus                                                                                    |
-| :----------- | :------------------------------------------------------------------------------------------ |
-| `LocLat`     | Laiuskraad                                                                                  |
-| `LocLon`     | Pikkuskraad                                                                                 |
-| `angle`      | Teie paneelide nurk 0 (horisontaalne) … 90 (vertikaalne)                                    |
-| `direction`  | Tasapinna asimuut, -180 … 180 (-180 = põhja, -90 = ida, 0 = lõuna, 90 = lääne, 180 = põhja) |
-| `totPower`   | paigaldatud moodulite võimsus kilovattides                                                  |
-| `enabled`    | Selle kirje kasutamiseks peab see olema`enabled`. Muidu`disabled`                           |
+| Seadistamine      | Tähendus                                                                                    |
+| :---------------- | :------------------------------------------------------------------------------------------ |
+| `locLat`          | Laiuskraad                                                                                  |
+| `locLong`         | Pikkuskraad                                                                                 |
+| `angle`           | Teie paneelide nurk 0 (horisontaalne) … 90 (vertikaalne)                                    |
+| `direction`       | Tasapinna asimuut, -180 … 180 (-180 = põhja, -90 = ida, 0 = lõuna, 90 = lääne, 180 = põhja) |
+| `totPower`        | paigaldatud moodulite võimsus kilovattides                                                  |
+| `total_area`      | Paneelide kogupindala ruutmeetrites                                                         |
+| `damping_morning` | Selle parameetriga saate tulemust hommikul reguleerida. Ujuv väärtus 0...1, vaikimisi 0     |
+| `damping_evening` | Selle parameetriga saate tulemust õhtul reguleerida. Ujuv väärtus 0...1, vaikimisi 0        |
+| `enabled`         | Selle kirje kasutamiseks peab see olema`enabled`. Muidu`disabled`                           |
 
 * * *
 
@@ -183,7 +186,7 @@ areneda rakendusega seotud probleemideks.
 
 ### `INFO`
 
-The`INFO`tase hõlmab sündmusi, mis on süsteemi jaoks olulised
+The`INFO`tase hõlmab sündmusi süsteemis, mis on olulised
 rakenduse äriline eesmärk. Sellised sündmused logitakse, et näidata, et süsteem on
 töötab normaalselt. Tootmissüsteemid logivad tavaliselt sellel tasemel vaikimisi
 nii et rakenduse tavapärase käitumise kokkuvõte oleks kõigile nähtav
@@ -200,7 +203,7 @@ asjakohased veakoodid. |
 
 ## Inspiratsioon
 
-Idee on inspireeritud allpool lingitud projektist @christian1980nrw. See projekt on minu esimene Victron Venus OS-iga, seega võtsin kasutusele mõned ideed ja lähenemisviisid järgmistest projektidest. Lähenemisviis on sama ja väga kitsaste süsteemide puhul on bash-skriptiga realiseerimine ilmselt parem
+Idee on inspireeritud allpool lingitud projektist @christian1980nrw. See projekt on minu esimene Victron Venus OS-iga, seega võtsin kasutusele mõned ideed ja lähenemisviisid järgmistest projektidest. Lähenemisviis on sama ja väga kitsaste süsteemide puhul on bash-skriptiga rakendamine ilmselt parem
 
 ##### – suur tänu teadmiste edasiandmise eest:
 
