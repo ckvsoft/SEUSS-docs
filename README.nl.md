@@ -50,7 +50,7 @@ getest
 
 # Installeren
 
-Download the install script from the GitHub repository execute the following command in your terminal:
+Download het installatiescript uit de GitHub-repository en voer de volgende opdracht uit in uw terminal:
 
     wget -O seuss_install.sh https://raw.githubusercontent.com/ckvsoft/SEUSS/dev/scripts/seuss_install.sh`
 
@@ -72,7 +72,7 @@ Om het bestandssysteem schrijfbaar te maken, moet u de volgende opdracht uitvoer
 Na`SEUSS`is succesvol geïnstalleerd, er is een website beschikbaar op het IP-adres en poort 5000 van de`Computer/VenusOS`waarop`SEUSS`was geïnstalleerd.
 
 -   U kunt het logbestand bekijken of downloaden.
--   Bovendien kan de configuratie worden uitgevoerd met behulp van de[Configuratieeditor]menu onderdeel.
+-   Bovendien kan de configuratie worden uitgevoerd met behulp van de[Configuratieeditor] menu item.
 -   Tooltips voor de meeste punten worden hier weergegeven.
 
 #### Logboekviewer
@@ -88,7 +88,7 @@ Na`SEUSS`is succesvol geïnstalleerd, er is een website beschikbaar op het IP-ad
 -   ![Logo](views/static/images/configeditor_panels.png?raw=true "SEUSS Config Editor")
 
 Deze zijn ook te vinden in de beschrijving van Instellingen.
-Voor degenen die liever in een configuratiebestand werken, is er config.toml
+Voor degenen die liever in een configuratiebestand werken, is er config.json
 
 # Instellingen
 
@@ -123,7 +123,7 @@ Voor degenen die liever in een configuratiebestand werken, is er config.toml
 | `user`                | e-mailadres dat u gebruikt om verbinding te maken met de VRM-portal                                                                                                                                                                                                                                                                                                                                                                                                     |
 | `password`            | wachtwoord dat u gebruikt om verbinding te maken met de VRM-portal                                                                                                                                                                                                                                                                                                                                                                                                      |
 | `max_discharge_power` | Standaard: -1<br/>Als je gebruikt`Limit inverter power`in het ESS-menu, dan moet deze waarde hier worden ingevoerd.<br/>Als de omvormer is ingesteld op`Discharge false`door deze app wordt deze waarde in de ESS overschreven.<br/>Deze limiet wordt hier ingesteld in de ontladingsmodus in de ESS.<br/>Als er geen limiet is ingesteld, laat de waarde dan staan`-1`.<br/>Voorbeeld: Voer in`1000`de afvoer te beperken`1000W`, Binnenkomen`-1`voor volledige kracht |
-| `primary`             | Als deze markt mogelijk wordt gemaakt, wordt deze op dit punt ingesteld als de primaire markt                                                                                                                                                                                                                                                                                                                                                                           |
+| `only_observation`    | Als`only observation`wordt geactiveerd, wordt de essunit alleen gebruikt voor statistische doeleinden. De essunit voert geen voorwaarden uit                                                                                                                                                                                                                                                                                                                            |
 | `enabled`             | Om dit item te gebruiken, moet dit het geval zijn`enabled`. Anders`disabled`                                                                                                                                                                                                                                                                                                                                                                                            |
 
 ## Spotmarkten
@@ -150,21 +150,24 @@ Voor degenen die liever in een configuratiebestand werken, is er config.toml
 
 | Instelling   | Betekenis                                                                                                                                                                                                                                                                                                                                                            |
 | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `api_token`  | Om de tibber_api_key te verkrijgen:<br/>1. log in met een gratis of klant-Tibber-account op<https://developer.tibber.com/settings/access-token><br/>2. Maak een token aan door de scopes te selecteren die je nodig hebt (selecteer "prijs")<br/>3. Gebruik deze link om een ​​gratis account aan te maken met je smartphone:<https://tibber.com/de/invite/ojgfbx2e> |
+| `api_token`  | Om de tibber_api_key te verkrijgen:<br/>1. log in met een gratis of klant Tibber-account op<https://developer.tibber.com/settings/access-token><br/>2. Maak een token aan door de scopes te selecteren die je nodig hebt (selecteer "prijs")<br/>3. Gebruik deze link om een ​​gratis account aan te maken met je smartphone:<https://tibber.com/de/invite/ojgfbx2e> |
 | `price_unit` | Instellen op:<br/>"energie" om de spotmarktprijzen te gebruiken (standaard),<br/>"totaal" om de totale prijzen inclusief belastingen en toeslagen te gebruiken,<br/>"belasting" om alleen de belastingen en toeslagen te gebruiken                                                                                                                                   |
 | `primary`    | Als deze markt mogelijk wordt gemaakt, wordt deze op dit punt ingesteld als de primaire markt                                                                                                                                                                                                                                                                        |
 | `enabled`    | Om dit item te gebruiken, moet dit het geval zijn`enabled`. Anders`disabled`                                                                                                                                                                                                                                                                                         |
 
 ## PV-panelen
 
-| Instelling  | Betekenis                                                                                |
-| :---------- | :--------------------------------------------------------------------------------------- |
-| `LocLat`    | Breedtegraad                                                                             |
-| `LocLon`    | Lengtegraad                                                                              |
-| `angle`     | Hoek van uw panelen 0 (horizontaal) … 90 (verticaal)                                     |
-| `direction` | Vliegtuigazimut, -180 … 180 (-180 = noord, -90 = oost, 0 = zuid, 90 = west, 180 = noord) |
-| `totPower`  | geïnstalleerde modules vermogen in kilowatt                                              |
-| `enabled`   | Om dit item te gebruiken, moet dit het geval zijn`enabled`. Anders`disabled`             |
+| Instelling        | Betekenis                                                                                       |
+| :---------------- | :---------------------------------------------------------------------------------------------- |
+| `locLat`          | Breedtegraad                                                                                    |
+| `locLong`         | Lengtegraad                                                                                     |
+| `angle`           | Hoek van uw panelen 0 (horizontaal) … 90 (verticaal)                                            |
+| `direction`       | Vliegtuigazimut, -180 … 180 (-180 = noord, -90 = oost, 0 = zuid, 90 = west, 180 = noord)        |
+| `totPower`        | geïnstalleerde modules vermogen in kilowatt                                                     |
+| `total_area`      | Totale oppervlakte van de panelen in vierkante meters                                           |
+| `damping_morning` | Met deze parameter kunt u het resultaat in de ochtend aanpassen. Waarde float 0..1, standaard 0 |
+| `damping_evening` | Met deze parameter kunt u 's avonds het resultaat aanpassen. Waarde float 0..1, standaard 0     |
+| `enabled`         | Om dit item te gebruiken, moet dit het geval zijn`enabled`. Anders`disabled`                    |
 
 * * *
 
@@ -183,7 +186,7 @@ escaleren tot problemen voor de toepassing.
 
 ### `INFO`
 
-De`INFO`niveau legt gebeurtenissen in het systeem vast die van belang zijn voor de
+De`INFO`niveau legt gebeurtenissen in het systeem vast die belangrijk zijn voor de
 het zakelijke doel van de applicatie. Dergelijke gebeurtenissen worden geregistreerd om aan te tonen dat het systeem dat doet
 normaal functioneren. Productiesystemen zijn doorgaans standaard ingesteld op logboekregistratie op dit niveau
 zodat een samenvatting van het normale gedrag van de applicatie voor iedereen zichtbaar is
