@@ -22,7 +22,7 @@ Este é um aplicativo Python 3 que liga sua unidade ESS (controlador) no momento
 
 * * *
 
-### Mercados à vista
+### Mercados à Vista
 
 * * *
 
@@ -88,7 +88,7 @@ Depois`SEUSS`foi instalado com sucesso, um site está disponível no endereço I
 -   ![Logo](views/static/images/configeditor_panels.png?raw=true "SEUSS Config Editor")
 
 Eles também podem ser encontrados na descrição das configurações.
-Para quem prefere trabalhar em um arquivo de configuração, existe o config.toml
+Para quem prefere trabalhar em um arquivo de configuração, existe o config.json
 
 # Configurações
 
@@ -123,10 +123,10 @@ Para quem prefere trabalhar em um arquivo de configuração, existe o config.tom
 | `user`                | endereço de e-mail que você usa para se conectar ao portal VRM                                                                                                                                                                                                                                                                                                                                                                      |
 | `password`            | senha que você usa para se conectar ao portal VRM                                                                                                                                                                                                                                                                                                                                                                                   |
 | `max_discharge_power` | Padrão: -1<br/>Se você usar`Limit inverter power`no menu ESS então este valor deve ser inserido aqui.<br/>Se o inversor estiver configurado para`Discharge false`por este aplicativo, esse valor será substituído no ESS.<br/>Este limite aqui é definido no modo de descarga no ESS.<br/>Se nenhum limite for definido, deixe o valor em`-1`.<br/>Exemplo: Entrar`1000`limitar a descarga a`1000W`, Digitar`-1`para potência total |
-| `primary`             | Se este mercado estiver habilitado, este ponto o define como o mercado primário                                                                                                                                                                                                                                                                                                                                                     |
+| `only_observation`    | Se`only observation`estiver ativado, o essunit será usado apenas para fins estatísticos. A essunit não executa nenhuma condição                                                                                                                                                                                                                                                                                                     |
 | `enabled`             | Para usar esta entrada deve ser`enabled`. De outra forma`disabled`                                                                                                                                                                                                                                                                                                                                                                  |
 
-## Mercados à vista
+## Mercados à Vista
 
 ### responder
 
@@ -157,14 +157,17 @@ Para quem prefere trabalhar em um arquivo de configuração, existe o config.tom
 
 ## Painéis fotovoltaicos
 
-| Contexto    | Significado                                                                               |
-| :---------- | :---------------------------------------------------------------------------------------- |
-| `LocLat`    | Latitude                                                                                  |
-| `LocLon`    | Longitude                                                                                 |
-| `angle`     | Ângulo dos seus painéis 0 (horizontal)… 90 (vertical)                                     |
-| `direction` | Azimute do plano, -180… 180 (-180 = norte, -90 = leste, 0 = sul, 90 = oeste, 180 = norte) |
-| `totPower`  | potência dos módulos instalados em quilo watt                                             |
-| `enabled`   | Para usar esta entrada deve ser`enabled`. De outra forma`disabled`                        |
+| Contexto          | Significado                                                                                 |
+| :---------------- | :------------------------------------------------------------------------------------------ |
+| `locLat`          | Latitude                                                                                    |
+| `locLong`         | Longitude                                                                                   |
+| `angle`           | Ângulo dos seus painéis 0 (horizontal)… 90 (vertical)                                       |
+| `direction`       | Azimute do plano, -180… 180 (-180 = norte, -90 = leste, 0 = sul, 90 = oeste, 180 = norte)   |
+| `totPower`        | potência dos módulos instalados em quilo watt                                               |
+| `total_area`      | Área total dos painéis em metros quadrados                                                  |
+| `damping_morning` | Com este parâmetro você pode ajustar o resultado pela manhã. Valor flutuante 0..1, padrão 0 |
+| `damping_evening` | Com este parâmetro você pode ajustar o resultado à noite. Valor flutuante 0..1, padrão 0    |
+| `enabled`         | Para usar esta entrada deve ser`enabled`. De outra forma`disabled`                          |
 
 * * *
 
@@ -178,7 +181,7 @@ O`ERROR`nível de log indica condições de erro dentro de um aplicativo que dif
 
 Eventos registrados no`WARN`nível normalmente indicam que algo inesperado aconteceu
 ocorreu, mas o aplicativo pode continuar funcionando normalmente por enquanto.
-Também é usado para significar condições que devem ser prontamente tratadas antes de ocorrerem.
+Também é usado para indicar condições que devem ser prontamente tratadas antes de ocorrerem.
 se transformar em problemas para o aplicativo.
 
 ### `INFO`
