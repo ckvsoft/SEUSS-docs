@@ -88,7 +88,7 @@ Po`SEUSS`został pomyślnie zainstalowany, strona internetowa jest dostępna pod
 -   ![Logo](views/static/images/configeditor_panels.png?raw=true "SEUSS Config Editor")
 
 Można je również znaleźć w opisie ustawień.
-Dla tych, którzy wolą pracować w pliku konfiguracyjnym, dostępny jest plik config.toml
+Dla tych, którzy wolą pracować w pliku konfiguracyjnym, dostępny jest plik config.json
 
 # Ustawienia
 
@@ -123,7 +123,7 @@ Dla tych, którzy wolą pracować w pliku konfiguracyjnym, dostępny jest plik c
 | `user`                | adres e-mail, którego używasz do łączenia się z portalem VRM                                                                                                                                                                                                                                                                                                                                                                                               |
 | `password`            | hasło, którego używasz do łączenia się z portalem VRM                                                                                                                                                                                                                                                                                                                                                                                                      |
 | `max_discharge_power` | Wartość domyślna: -1<br/>Jeśli użyjesz`Limit inverter power`w menu ESS, należy tutaj wprowadzić tę wartość.<br/>Jeśli falownik jest ustawiony na`Discharge false`przez tę aplikację, wartość ta zostanie nadpisana w ESS.<br/>Limit ten jest tutaj ustawiony w trybie rozładowania w ESS.<br/>Jeśli nie ustawiono żadnego limitu, pozostaw wartość na poziomie`-1`.<br/>Przykład: Enter`1000`ograniczyć wyładowanie do`1000W`, Wchodzić`-1`dla pełnej Mocy |
-| `primary`             | Jeśli ten rynek jest włączony, ten punkt ustawia go jako rynek pierwotny                                                                                                                                                                                                                                                                                                                                                                                   |
+| `only_observation`    | Jeśli`only observation`zostanie aktywowany, jednostka essunit będzie używana wyłącznie do celów statystycznych. Jednostka essunit nie wykonuje żadnych warunków                                                                                                                                                                                                                                                                                            |
 | `enabled`             | Aby skorzystać z tego wpisu, musi tak być`enabled`. W przeciwnym razie`disabled`                                                                                                                                                                                                                                                                                                                                                                           |
 
 ## Rynki spotowe
@@ -157,14 +157,17 @@ Dla tych, którzy wolą pracować w pliku konfiguracyjnym, dostępny jest plik c
 
 ## Panele fotowoltaiczne
 
-| Ustawienie  | Oznaczający                                                                                           |
-| :---------- | :---------------------------------------------------------------------------------------------------- |
-| `LocLat`    | Szerokość                                                                                             |
-| `LocLon`    | Długość geograficzna                                                                                  |
-| `angle`     | Kąt paneli 0 (w poziomie) … 90 (w pionie)                                                             |
-| `direction` | Azymut płaszczyzny, -180 … 180 (-180 = północ, -90 = wschód, 0 = południe, 90 = zachód, 180 = północ) |
-| `totPower`  | Moc zainstalowanych modułów w kilowatach                                                              |
-| `enabled`   | Aby skorzystać z tego wpisu, musi tak być`enabled`. W przeciwnym razie`disabled`                      |
+| Ustawienie        | Oznaczający                                                                                              |
+| :---------------- | :------------------------------------------------------------------------------------------------------- |
+| `locLat`          | Szerokość                                                                                                |
+| `locLong`         | Długość geograficzna                                                                                     |
+| `angle`           | Kąt paneli 0 (w poziomie) … 90 (w pionie)                                                                |
+| `direction`       | Azymut płaszczyzny, -180 … 180 (-180 = północ, -90 = wschód, 0 = południe, 90 = zachód, 180 = północ)    |
+| `totPower`        | Moc zainstalowanych modułów w kilowatach                                                                 |
+| `total_area`      | Całkowita powierzchnia paneli w metrach kwadratowych                                                     |
+| `damping_morning` | Za pomocą tego parametru możesz dostosować wynik rano. Wartość zmiennoprzecinkowa 0..1, domyślnie 0      |
+| `damping_evening` | Za pomocą tego parametru możesz dostosować wynik wieczorem. Wartość zmiennoprzecinkowa 0..1, domyślnie 0 |
+| `enabled`         | Aby skorzystać z tego wpisu, musi tak być`enabled`. W przeciwnym razie`disabled`                         |
 
 * * *
 
@@ -172,7 +175,7 @@ Dla tych, którzy wolą pracować w pliku konfiguracyjnym, dostępny jest plik c
 
 ### `ERROR`
 
-The`ERROR`poziom dziennika wskazuje warunki błędów w aplikacji, które utrudniają wykonanie określonej operacji. Chociaż aplikacja może nadal działać z obniżonym poziomem funkcjonalności lub wydajności,<br/>`ERROR`dzienniki oznaczają problemy, które należy niezwłocznie zbadać.
+The`ERROR`poziom dziennika wskazuje warunki błędów w aplikacji, które utrudniają wykonanie określonej operacji. Chociaż aplikacja może nadal działać z obniżonym poziomem funkcjonalności lub wydajności,<br/>`ERROR` logs signify issues that should be investigated promptly.
 
 ### `WARN`
 
