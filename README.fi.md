@@ -88,17 +88,17 @@ Jälkeen`SEUSS`on asennettu onnistuneesti, verkkosivusto on saatavilla IP-osoitt
 -   ![Logo](views/static/images/configeditor_panels.png?raw=true "SEUSS Config Editor")
 
 Ne löytyvät myös Asetukset-kuvauksesta.
-Niille, jotka haluavat työskennellä asetustiedostossa, on config.toml
+Niille, jotka haluavat työskennellä asetustiedostossa, on config.json
 
 # asetukset
 
 ## Kenraali
 
-| Asetus          | Merkitys                                                                                                                                 |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `time_zone`     | Olennainen toimintojen oikea ajoitus maantieteellisen sijaintisi perusteella.<br/>Muotoile kuten`Europe/Vienna`, `Europe/Amsterdam`, ... |
-| `log_file_path` | Asettaa vaihtoehtoisen polun, johon lokitiedostot tallennetaan.                                                                          |
-| `log_level`     | Käytetyt lokitasot ovat:`INFO`,`WARNING`,`ERROR`ja`DEBUG`. katso[Lokitasot](#loglevels)                                                  |
+| Asetus          | Merkitys                                                                                                                                |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `time_zone`     | Olennainen toimintojen oikea ajoitus maantieteellisen sijaintisi perusteella.<br/>Muotoile kuten`Europe/Vienna`,`Europe/Amsterdam`, ... |
+| `log_file_path` | Asettaa vaihtoehtoisen polun, johon lokitiedostot tallennetaan.                                                                         |
+| `log_level`     | Käytetyt lokitasot ovat:`INFO`,`WARNING`,`ERROR`ja`DEBUG`. katso[Lokitasot](#loglevels)                                                 |
 
 ## hinnat
 
@@ -119,11 +119,11 @@ Niille, jotka haluavat työskennellä asetustiedostossa, on config.toml
 | :-------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `use_vrm`             | Jos tämä piste on käytössä (tosi), Victroniin yritetään muodostaa yhteys VRM-portaalin kautta.<br/>Tämä vaatii käyttäjän/salasanan VRM-portaalissa                                                                                                                                                                                                                                                                  |
 | `ip_address`          | Victronin paikallinen IP-osoite.<br/>Tämä vaaditaan, jos`use_vrm`on poistettu käytöstä (false).<br/>Muuten tämä kenttä jää tyhjäksi                                                                                                                                                                                                                                                                                 |
-| `unit_id`             | VRM-portaalin tunnus<br/>löytyy osoitteesta`Settings / VRM online portal / VRM Portal Id`.<br/>Huomautus: Tämä tunnus vaaditaan Victronin käyttämiseen, vaikka et käyttäisi VRM-portaalia                                                                                                                                                                                                                           |
+| `unit_id`             | VRM-portaalin tunnus<br/>löytyy osoitteesta`Settings / VRM online portal / VRM Portal Id`.<br/>Huomautus: Tämä tunnus vaaditaan Victroniin pääsyyn, vaikka et käyttäisi VRM-portaalia                                                                                                                                                                                                                               |
 | `user`                | sähköpostiosoite, jota käytät yhteyden muodostamiseen VRM-portaaliin                                                                                                                                                                                                                                                                                                                                                |
 | `password`            | salasana, jota käytät yhteyden muodostamiseen VRM-portaaliin                                                                                                                                                                                                                                                                                                                                                        |
 | `max_discharge_power` | Oletus: -1<br/>Jos käytät`Limit inverter power`ESS-valikossa, tämä arvo on syötettävä tähän.<br/>Jos invertteri on asetettu asentoon`Discharge false`Tämän sovelluksen avulla tämä arvo korvataan ESS:ssä.<br/>Tämä raja tässä asetetaan purkaustilassa ESS:ssä.<br/>Jos rajaa ei ole asetettu, jätä arvo arvoon`-1`.<br/>Esimerkki: Enter`1000`purkamisen rajoittamiseksi`1000W`, Tulla sisään`-1`täydelle teholle |
-| `primary`             | Jos tämä markkina on käytössä, tämä kohta asettaa sen ensisijaiseksi markkinaksi                                                                                                                                                                                                                                                                                                                                    |
+| `only_observation`    | Jos`only observation`on aktivoitu, yksikköä käytetään vain tilastollisiin tarkoituksiin. Essunit ei täytä mitään ehtoja                                                                                                                                                                                                                                                                                             |
 | `enabled`             | Jotta voit käyttää tätä merkintää, sen on oltava`enabled`. Muuten`disabled`                                                                                                                                                                                                                                                                                                                                         |
 
 ## Spot-markkinat
@@ -138,13 +138,13 @@ Niille, jotka haluavat työskennellä asetustiedostossa, on config.toml
 
 ### Enzo on
 
-| Asetus       | Merkitys                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| :----------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `api_token`  | Kuinka saada ilmainen api-suojaustunnus:<br/>1. Siirry kohtaan<https://transparency.entsoe.eu/>--> rekisteröidy ja luo tili<br/>2. Lähetä sähköposti osoitteeseen[transparency@entsoe.eu](mailto:transparency@entsoe.eu)otsikkorivillä "Restful API access".<br/>3. ENTSO-E Helpdesk vastaa pyyntöösi 3 työpäivän kuluessa.<br/>4. Luo suojaustunnus osoitteessa<https://transparency.entsoe.eu/usrm/user/myAccountSettings> |
-| `in_domain`  | Voit selvittää verkkotunnuksesi sisään- ja ulostuloavaimesi osoitteessa:<br/><https://www.entsoe.eu/data/energy-identification-codes-eic/eic-area-codes-map/>                                                                                                                                                                                                                                                                |
-| `out_domain` | Kuten`in_domain`                                                                                                                                                                                                                                                                                                                                                                                                             |
-| `primary`    | Jos tämä markkina on käytössä, tämä kohta asettaa sen ensisijaiseksi markkinaksi                                                                                                                                                                                                                                                                                                                                             |
-| `enabled`    | Jotta voit käyttää tätä merkintää, sen on oltava`enabled`. Muuten`disabled`                                                                                                                                                                                                                                                                                                                                                  |
+| Asetus       | Merkitys                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| :----------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `api_token`  | Kuinka saada ilmainen api-suojaustunnus:<br/>1. Siirry kohtaan<https://transparency.entsoe.eu/> --> register and create an account<br/>2. Lähetä sähköposti osoitteeseen[transparency@entsoe.eu](mailto:transparency@entsoe.eu)otsikkorivillä "Restful API access".<br/>3. ENTSO-E Helpdesk vastaa pyyntöösi 3 työpäivän kuluessa.<br/>4. Luo suojaustunnus osoitteessa<https://transparency.entsoe.eu/usrm/user/myAccountSettings> |
+| `in_domain`  | Voit selvittää verkkotunnuksesi sisään- ja ulostuloavaimesi osoitteessa:<br/><https://www.entsoe.eu/data/energy-identification-codes-eic/eic-area-codes-map/>                                                                                                                                                                                                                                                                       |
+| `out_domain` | Kuten`in_domain`                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `primary`    | Jos tämä markkina on käytössä, tämä kohta asettaa sen ensisijaiseksi markkinaksi                                                                                                                                                                                                                                                                                                                                                    |
+| `enabled`    | Jotta voit käyttää tätä merkintää, sen on oltava`enabled`. Muuten`disabled`                                                                                                                                                                                                                                                                                                                                                         |
 
 ### Tibber
 
@@ -157,14 +157,17 @@ Niille, jotka haluavat työskennellä asetustiedostossa, on config.toml
 
 ## PV-paneelit
 
-| Asetus      | Merkitys                                                                                           |
-| :---------- | :------------------------------------------------------------------------------------------------- |
-| `LocLat`    | Leveysaste                                                                                         |
-| `LocLon`    | Pituusaste                                                                                         |
-| `angle`     | Paneeleidesi kulma 0 (vaaka) … 90 (pysty)                                                          |
-| `direction` | Tason atsimuutti, -180 … 180 (-180 = pohjoinen, -90 = itä, 0 = etelä, 90 = länsi, 180 = pohjoinen) |
-| `totPower`  | asennettujen moduulien teho kilowatteina                                                           |
-| `enabled`   | Jotta voit käyttää tätä merkintää, sen on oltava`enabled`. Muuten`disabled`                        |
+| Asetus            | Merkitys                                                                                           |
+| :---------------- | :------------------------------------------------------------------------------------------------- |
+| `locLat`          | Leveysaste                                                                                         |
+| `locLong`         | Pituusaste                                                                                         |
+| `angle`           | Paneeleidesi kulma 0 (vaaka) … 90 (pysty)                                                          |
+| `direction`       | Tason atsimuutti, -180 … 180 (-180 = pohjoinen, -90 = itä, 0 = etelä, 90 = länsi, 180 = pohjoinen) |
+| `totPower`        | asennettujen moduulien teho kilowatteina                                                           |
+| `total_area`      | Paneeleiden kokonaispinta-ala neliömetrinä                                                         |
+| `damping_morning` | Tällä parametrilla voit säätää tulosta aamulla. Kelluva arvo 0..1, oletusarvo 0                    |
+| `damping_evening` | Tällä parametrilla voit säätää tulosta illalla. Kelluva arvo 0..1, oletusarvo 0                    |
+| `enabled`         | Jotta voit käyttää tätä merkintää, sen on oltava`enabled`. Muuten`disabled`                        |
 
 * * *
 
