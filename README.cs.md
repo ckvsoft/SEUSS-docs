@@ -58,7 +58,7 @@ Spusťte instalační skript s dalšími možnostmi, abyste připravili vše v p
 
     bash seuss_install.sh`
 
-Výchozí adresář je /data/seuss (Venus OS) Volitelně však můžete zadat jiný adresář pomocí proměnné prostředí TARGET_DIRECTORY, např.
+The default directory is /data/seuss (Venus OS) But you can optionally specify a different directory by using the environment variable TARGET_DIRECTORY e.g.
 
     TARGET_DIRECTORY=/opt/seuss bash seuss_install.sh`
 
@@ -73,7 +73,7 @@ Po`SEUSS`byla úspěšně nainstalována, na IP adrese a portu 5000 je dostupná
 
 -   Soubor protokolu si můžete prohlédnout nebo stáhnout.
 -   Kromě toho lze konfiguraci provést pomocí[Editor konfigurace]položka menu.
--   Zde jsou zobrazeny tipy nástrojů pro většinu bodů.
+-   Tool tips for most points are displayed here.
 
 #### Prohlížeč protokolů
 
@@ -88,7 +88,7 @@ Po`SEUSS`byla úspěšně nainstalována, na IP adrese a portu 5000 je dostupná
 -   ![Logo](views/static/images/configeditor_panels.png?raw=true "SEUSS Config Editor")
 
 Ty lze také nalézt v popisu Nastavení.
-Pro ty, kteří raději pracují v konfiguračním souboru, je tu config.toml
+Pro ty, kteří raději pracují v konfiguračním souboru, je tu config.json
 
 # Nastavení
 
@@ -123,7 +123,7 @@ Pro ty, kteří raději pracují v konfiguračním souboru, je tu config.toml
 | `user`                | e-mailovou adresu, kterou používáte k připojení k portálu VRM                                                                                                                                                                                                                                                                                                                                               |
 | `password`            | heslo, které používáte pro připojení k portálu VRM                                                                                                                                                                                                                                                                                                                                                          |
 | `max_discharge_power` | Výchozí: -1<br/>Pokud použijete`Limit inverter power`v menu ESS pak musí být tato hodnota zadána zde.<br/>Pokud je střídač nastaven na`Discharge false`touto aplikací bude tato hodnota přepsána v ESS.<br/>Tento limit je zde nastaven v režimu vybíjení v EZS.<br/>Pokud není nastaven žádný limit, ponechte hodnotu na`-1`.<br/>Příklad: Enter`1000`omezit vypouštění na`1000W`, Enter`-1`pro plný výkon |
-| `primary`             | Pokud je tento trh povolen, tento bod jej nastaví jako primární trh                                                                                                                                                                                                                                                                                                                                         |
+| `only_observation`    | Li`only observation`je aktivován, bude essunit použit pouze pro statistické účely. essunit nesplňuje žádné podmínky                                                                                                                                                                                                                                                                                         |
 | `enabled`             | Chcete-li použít tento záznam, musí být`enabled`. v opačném případě`disabled`                                                                                                                                                                                                                                                                                                                               |
 
 ## Spotové trhy
@@ -148,23 +148,26 @@ Pro ty, kteří raději pracují v konfiguračním souboru, je tu config.toml
 
 ### Tibber
 
-| Nastavení    | Význam                                                                                                                                                                                                                                                                                                                                                     |
-| :----------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `api_token`  | Chcete-li získat tibber_api_key:<br/>1. přihlaste se pomocí bezplatného nebo zákaznického účtu Tibber na adrese<https://developer.tibber.com/settings/access-token><br/>2. Vytvořte token výběrem požadovaných rozsahů (vyberte "cena")<br/>3. Použijte tento odkaz k vytvoření bezplatného účtu pomocí smartphonu:<https://tibber.com/de/invite/ojgfbx2e> |
-| `price_unit` | Nastaven na:<br/>„energie“ pro použití cen na spotovém trhu (výchozí),<br/>„celkem“ pro použití celkových cen včetně daní a poplatků,<br/>"daň" používat pouze daně a poplatky                                                                                                                                                                             |
-| `primary`    | Pokud je tento trh povolen, tento bod jej nastaví jako primární trh                                                                                                                                                                                                                                                                                        |
-| `enabled`    | Chcete-li použít tento záznam, musí být`enabled`. v opačném případě`disabled`                                                                                                                                                                                                                                                                              |
+| Nastavení    | Význam                                                                                                                                                                                                                                                                                                                                                         |
+| :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `api_token`  | Chcete-li získat tibber_api_key:<br/>1. přihlaste se pomocí bezplatného nebo zákaznického účtu Tibber na adrese<https://developer.tibber.com/settings/access-token><br/>2. Create a token by selecting the scopes you need (select "price")<br/>3. Použijte tento odkaz k vytvoření bezplatného účtu pomocí smartphonu:<https://tibber.com/de/invite/ojgfbx2e> |
+| `price_unit` | Nastaven na:<br/>„energie“ pro použití cen na spotovém trhu (výchozí),<br/>„celkem“ pro použití celkových cen včetně daní a poplatků,<br/>"daň" používat pouze daně a poplatky                                                                                                                                                                                 |
+| `primary`    | Pokud je tento trh povolen, tento bod jej nastaví jako primární trh                                                                                                                                                                                                                                                                                            |
+| `enabled`    | Chcete-li použít tento záznam, musí být`enabled`. v opačném případě`disabled`                                                                                                                                                                                                                                                                                  |
 
 ## FV panely
 
-| Nastavení   | Význam                                                                                   |
-| :---------- | :--------------------------------------------------------------------------------------- |
-| `LocLat`    | Zeměpisná šířka                                                                          |
-| `LocLon`    | Zeměpisná délka                                                                          |
-| `angle`     | Úhel vašich panelů 0 (horizontální) … 90 (vertikální)                                    |
-| `direction` | Azimut roviny, -180 … 180 (-180 = sever, -90 = východ, 0 = jih, 90 = západ, 180 = sever) |
-| `totPower`  | výkon instalovaných modulů v kilowattech                                                 |
-| `enabled`   | Chcete-li použít tento záznam, musí být`enabled`. v opačném případě`disabled`            |
+| Nastavení         | Význam                                                                                   |
+| :---------------- | :--------------------------------------------------------------------------------------- |
+| `locLat`          | Zeměpisná šířka                                                                          |
+| `locLong`         | Zeměpisná délka                                                                          |
+| `angle`           | Úhel vašich panelů 0 (horizontální) … 90 (vertikální)                                    |
+| `direction`       | Azimut roviny, -180 … 180 (-180 = sever, -90 = východ, 0 = jih, 90 = západ, 180 = sever) |
+| `totPower`        | výkon instalovaných modulů v kilowattech                                                 |
+| `total_area`      | Celková plocha panelů v metrech čtverečních                                              |
+| `damping_morning` | Pomocí tohoto parametru můžete ráno upravit výsledek. Hodnota float 0..1, výchozí 0      |
+| `damping_evening` | Pomocí tohoto parametru můžete večer upravit výsledek. Hodnota float 0..1, výchozí 0     |
+| `enabled`         | Chcete-li použít tento záznam, musí být`enabled`. v opačném případě`disabled`            |
 
 * * *
 
