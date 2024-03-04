@@ -88,7 +88,7 @@ Etter`SEUSS`har blitt installert, er et nettsted tilgjengelig på IP-adressen og
 -   ![Logo](views/static/images/configeditor_panels.png?raw=true "SEUSS Config Editor")
 
 Disse finnes også i Innstillinger-beskrivelsen.
-For de som foretrekker å jobbe i en konfigurasjonsfil, er det config.toml
+For de som foretrekker å jobbe i en konfigurasjonsfil, er det config.json
 
 # Innstillinger
 
@@ -122,8 +122,8 @@ For de som foretrekker å jobbe i en konfigurasjonsfil, er det config.toml
 | `unit_id`             | VRM-portal-ID<br/>finnes i`Settings / VRM online portal / VRM Portal Id`.<br/>Merk: Denne IDen er nødvendig for å få tilgang til Victron selv om du ikke bruker en VRM-portal                                                                                                                                                                                                                                |
 | `user`                | e-postadresse du bruker for å koble til VRM-portalen                                                                                                                                                                                                                                                                                                                                                         |
 | `password`            | passordet du bruker for å koble til VRM-portalen                                                                                                                                                                                                                                                                                                                                                             |
-| `max_discharge_power` | Standard: -1<br/>Hvis du bruker`Limit inverter power`i ESS-menyen må denne verdien legges inn her.<br/>Hvis omformeren er satt til`Discharge false`av denne appen vil denne verdien bli overskrevet i ESS.<br/>Denne grensen her er satt i utladningsmodus i ESS.<br/>Hvis ingen grense er satt, la verdien stå på`-1`.<br/>Example: Enter `1000`å begrense utslippet til`1000W`, Tast inn`-1`for full kraft |
-| `primary`             | Hvis dette markedet er aktivert, setter dette punktet det som det primære markedet                                                                                                                                                                                                                                                                                                                           |
+| `max_discharge_power` | Standard: -1<br/>Hvis du bruker`Limit inverter power`i ESS-menyen må denne verdien legges inn her.<br/>Hvis omformeren er satt til`Discharge false`av denne appen vil denne verdien bli overskrevet i ESS.<br/>Denne grensen her er satt i utladningsmodus i ESS.<br/>Hvis ingen grense er satt, la verdien stå på`-1`.<br/>Eksempel: Enter`1000`å begrense utslippet til`1000W`, Tast inn`-1`for full kraft |
+| `only_observation`    | Hvis`only observation`er aktivert vil essenheten kun brukes til statistiske formål. Essenheten utfører ingen betingelser                                                                                                                                                                                                                                                                                     |
 | `enabled`             | For å bruke denne oppføringen må den være det`enabled`. Ellers`disabled`                                                                                                                                                                                                                                                                                                                                     |
 
 ## Spot Markets
@@ -138,13 +138,13 @@ For de som foretrekker å jobbe i en konfigurasjonsfil, er det config.toml
 
 ### Enzo er
 
-| Innstilling  | Betydning                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| :----------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `api_token`  | Slik får du gratis api-sikkerhetstoken:<br/>1. Gå til<https://transparency.entsoe.eu/>--> registrer deg og opprett en konto<br/>2. Send en e-post til[transparency@entsoe.eu](mailto:transparency@entsoe.eu)med "Restful API access" i emnelinjen<br/>3. ENTSO-E Helpdesk vil svare på forespørselen din innen 3 virkedager.<br/>4. Generer et sikkerhetstoken på<https://transparency.entsoe.eu/usrm/user/myAccountSettings> |
-| `in_domain`  | For å finne inn og ut domenenøkkelen din, gå til:<br/><https://www.entsoe.eu/data/energy-identification-codes-eic/eic-area-codes-map/>                                                                                                                                                                                                                                                                                        |
-| `out_domain` | som`in_domain`                                                                                                                                                                                                                                                                                                                                                                                                                |
-| `primary`    | Hvis dette markedet er aktivert, setter dette punktet det som det primære markedet                                                                                                                                                                                                                                                                                                                                            |
-| `enabled`    | For å bruke denne oppføringen må den være det`enabled`. Ellers`disabled`                                                                                                                                                                                                                                                                                                                                                      |
+| Innstilling  | Betydning                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| :----------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `api_token`  | Slik får du det gratis api-sikkerhetstokenet:<br/>1. Gå til<https://transparency.entsoe.eu/>--> registrer deg og opprett en konto<br/>2. Send en e-post til[transparency@entsoe.eu](mailto:transparency@entsoe.eu)med "Restful API access" i emnelinjen<br/>3. ENTSO-E Helpdesk vil svare på forespørselen din innen 3 virkedager.<br/>4. Generer et sikkerhetstoken på<https://transparency.entsoe.eu/usrm/user/myAccountSettings> |
+| `in_domain`  | For å finne inn og ut domenenøkkelen din, gå til:<br/><https://www.entsoe.eu/data/energy-identification-codes-eic/eic-area-codes-map/>                                                                                                                                                                                                                                                                                              |
+| `out_domain` | som`in_domain`                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `primary`    | Hvis dette markedet er aktivert, setter dette punktet det som det primære markedet                                                                                                                                                                                                                                                                                                                                                  |
+| `enabled`    | For å bruke denne oppføringen må den være det`enabled`. Ellers`disabled`                                                                                                                                                                                                                                                                                                                                                            |
 
 ### Tibber
 
@@ -157,14 +157,17 @@ For de som foretrekker å jobbe i en konfigurasjonsfil, er det config.toml
 
 ## PV paneler
 
-| Innstilling | Betydning                                                                       |
-| :---------- | :------------------------------------------------------------------------------ |
-| `LocLat`    | Breddegrad                                                                      |
-| `LocLon`    | Lengdegrad                                                                      |
-| `angle`     | Vinkelen på panelene dine 0 (horisontal) … 90 (vertikal)                        |
-| `direction` | Planasimut, -180 … 180 (-180 = nord, -90 = øst, 0 = sør, 90 = vest, 180 = nord) |
-| `totPower`  | installerte moduler effekt i kilowatt                                           |
-| `enabled`   | For å bruke denne oppføringen må den være det`enabled`. Ellers`disabled`        |
+| Innstilling       | Betydning                                                                                    |
+| :---------------- | :------------------------------------------------------------------------------------------- |
+| `locLat`          | Breddegrad                                                                                   |
+| `locLong`         | Lengdegrad                                                                                   |
+| `angle`           | Vinkelen på panelene dine 0 (horisontal) … 90 (vertikal)                                     |
+| `direction`       | Planasimut, -180 … 180 (-180 = nord, -90 = øst, 0 = sør, 90 = vest, 180 = nord)              |
+| `totPower`        | installerte moduler effekt i kilowatt                                                        |
+| `total_area`      | Totalt areal av panelene i kvadratmeter                                                      |
+| `damping_morning` | Med denne parameteren kan du justere resultatet om morgenen. Verdi flytende 0..1, standard 0 |
+| `damping_evening` | Med denne parameteren kan du justere resultatet om kvelden. Verdi flytende 0..1, standard 0  |
+| `enabled`         | For å bruke denne oppføringen må den være det`enabled`. Ellers`disabled`                     |
 
 * * *
 
@@ -192,7 +195,7 @@ slik at et sammendrag av applikasjonens normale oppførsel er synlig for alle
 ### `DEBUG`
 
 De`DEBUG`nivå brukes til å logge meldinger som hjelper utviklere med å identifisere
-problemer under en feilsøkingsøkt. Innholdet i meldingene logget på DEBUG
+problemer under en feilsøkingsøkt. Innholdet i meldingene som er logget på DEBUG
 nivå vil variere avhengig av søknaden din, men de inneholder vanligvis
 detaljert informasjon som hjelper utviklerne med å feilsøke problemer
 effektivt. Dette kan inkludere variablers tilstand innenfor det omkringliggende omfanget eller
